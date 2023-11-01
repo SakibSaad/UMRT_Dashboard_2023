@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROSBridge Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.1.0/roslib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>ROSBridge Example</h1>
+    <div id="poseOutput"></div>
+    <div id="velOutput"></div>
+
+    <div style="width: 80%;">
+        <canvas id="velocity-chart"></canvas>
+    </div>
+
+    <div style="width: 80%;">
+        <canvas id="angularvelocity-chart"></canvas>
+    </div>
+
+    <script>
+        const poseOutputDiv = document.getElementById("poseOutput");
+
+        const ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090',
+        });
+
+        const poseListener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/turtle1/pose',
+            messageType: 'turtlesim/Pose',
+        });
+
+        const velListener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/turtle1/cmd_vel',
+            messageType: 'geometry_msgs/Twist',
+        });
+
+        // Configuration for the linear velocity chart
+        var velocityChartCtx = document.getElementById('velocity-chart').getContext('2d');
+        var velocityChart = new Chart(velocityChartCtx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Linear Velocity',
+                    data: [],
+                    borderColor: 'blue',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0,
+                }],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                    },
+                    y: {
+                        min: -10,
+                        max: 10,
+                    },
+                },
+            },
+        });
+
+        // Configuration for the angular velocity chart
+        var angularVelocityChartCtx = document.getElementById('angularvelocity-chart').getContext('2d');
+        var angularVelocityChart = new Chart(angularVelocityChartCtx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Angular Velocity',
+                    data: [],
+                    borderColor: 'red',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0,
+                }],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                    },
+                    y: {
+                        min: -10,
+                        max: 10,
+                    },
+                },
+            },
+        });
+
+        var time = 0;
+        var maxDataPoints = 60; // Adjust this to your desired limit
+        var velocityData = [];
+        var angularVelocityData = [];
+        var dataPointCount = 0; // Counter for the data points
+
+        function updateCharts() {
+            poseListener.subscribe(function (message) {
+                velocityData.push(message.linear_velocity);
+                dataPointCount++; // Increment the data point counter
+
+                if (velocityData.length > maxDataPoints) {
+                    velocityData.shift();
+                }
+
+                if (dataPointCount % 1000 === 0) {
+                    // Increment time only when every 100th data point is received
+                    time += 1;
+                }
+
+                velocityChart.data.labels = Array.from({ length: velocityData.length }, (_, i) => (i - velocityData.length + 1 + time).toString());
+                velocityChart.data.datasets[0].data = velocityData;
+                velocityChart.update();
+            });
+
+            velListener.subscribe(function (message) {
+                angularVelocityData.push(message.angular.z);
+
+                if (angularVelocityData.length > maxDataPoints) {
+                    angularVelocityData.shift();
+                }
+            });
+            angularVelocityChart.data.labels = Array.from({ length: angularVelocityData.length }, (_, i) => (i - angularVelocityData.length + 1 + time).toString());
+            angularVelocityChart.data.datasets[0].data = angularVelocityData;
+            angularVelocityChart.update();
+
+            setTimeout(updateCharts, 1000);
+        }
+
+        updateCharts();
+    </script>
+</body>
+</html>
