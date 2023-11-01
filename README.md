@@ -18,7 +18,7 @@
    This will start the server on port 9090.
 
 ## Launch /indicator topic:
-2. Run the Python script to launch the `/indicator` topic. Make sure you have the `send_to_indicator.py` script in your Downloads folder. Run the following command:
+2. Run the Python script to launch the `/indicator` topic. Run the following command:
     ```shell
     python3 ~/Downloads/send_to_indicator.py
     ```
