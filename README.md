@@ -22,4 +22,4 @@
     ```shell
     python3 ~/Downloads/send_to_indicator.py
     ```
-   Note: For my case, I saved the `indicator.py` to the Downloads folder.
+   Note: For my case, I saved the `send_to_indicator.py` to the Downloads folder.
