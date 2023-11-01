@@ -16,7 +16,7 @@
 
 1. Launch RosBridge using the following command:
     ```
-    ros2 launch rosbridge_server rosbridge_websocket.launch \
+    ros2 launch rosbridge_server rosbridge_websocket_launch.xml
     [The server will run at port 9090]
     ```
 
