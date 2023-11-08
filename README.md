@@ -25,6 +25,5 @@
    Note: For my case, I saved the `send_to_indicator.py` to the Downloads folder.
 
 ## Run Teleop Twist Keyboard:
-    ```shell
+
     ros2 run teleop_twist_keyboard teleop_twist_keyboard
-    ```
