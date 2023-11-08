@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autonomous Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.1.0/roslib.min.js"></script>
+    <style>
+
+        .container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            margin-top: 10px; 
+        }
+
+        .column-container {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;        
+        }
+
+        .one {
+            display: flex;
+            width: 90%;
+            height: 49%;
+            border: 1px solid red;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 40px;
+        }
+
+        .two{
+            display: flex;
+            width: 90%;
+            height: 49%;
+            border: 1px solid red;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .side-by-side-div {
+            width: 90%;
+            height: 100%;
+            border: 1px solid #D95A27;
+        }
+
+        body {
+            text-align: center; /* Center content in the body element */
+            background-color: #ffecde;
+        }
+    
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .first {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically if needed */
+            margin: 0 auto; /* Center the element horizontally */
+            border: #D95A27;
+        }
+    
+        label {
+            color: #D95A27;
+            margin-top: 10px;
+            margin-right: 50px;
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+
+        .status{
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+            
+        }
+    
+        .light {
+            width: 50px;
+            height: 80px; /* Set both width and height to the same value */
+            transition: background-color 0.5s;
+            /* margin: 0 auto; Center the element horizontally
+            margin-top: 50px;
+            margin-bottom: 100px; */
+            margin-left: 5px;
+        }
+        
+    
+        .autonomous {
+            /* width: 30%; Set a width for the table, adjust as needed
+            margin: 0 auto; Center the table horizontally
+            margin-top: 100px;
+            margin-bottom: 100px; */
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 80px;
+            padding: 0px;
+        }
+
+        .angvelocity{
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 80px;
+            padding: 0px;
+        }
+
+        .linvelocity{
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 80px;
+            padding: 0px;
+        }
+    
+        .point {
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 20px;
+            font-family: sans-serif;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+        }
+        
+        th {
+            width: 200px;
+            border: 2px solid #F5882E;
+            text-align: center;
+            color: #D95A27;
+        }
+
+        td {
+            width: 150px;
+            border: 2px solid #F5882E;
+            text-align: center;
+            color: #F5882E;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="first">
+        <label><b>Autonomous Dashboard</b></label> 
+
+        <img class="logo" src="asset/UMRT new logo.png" alt="">
+
+    </div>
+
+    <div class="container">
+        <div class="column-container">
+          <div class="one"></div>
+          <div class="two"></div>
+        </div>
+        <div class="side-by-side-div">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.5823360348827!2d90.44713507620115!3d23.797882878638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7d8042caf2d%3A0x686fa3e360361ddf!2sUnited%20International%20University!5e0!3m2!1sen!2sbd!4v1699432182382!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <table class="point">
+            <tr>
+                <th>Point 0</th>
+                <td><div id="one">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 1</th>
+                <td><div id="two">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 2</th>
+                <td><div id="three">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 3</th>
+                <td><div id="four">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 4</th>
+                <td><div id="five">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 5</th>
+                <td><div id="six">N/A</div></td>
+            </tr>
+            <tr>
+                <th>Point 6</th>
+                <td><div id="seven">N/A</div></td>
+            </tr>
+        </table>
+      </div>
+    
+    
+
+    <div class="status">
+
+        <table class="autonomous">
+            <tr>
+                <th>Status</th>
+                <td><div id="autonomous">N/A</div></td>
+            </tr>
+
+        </table>
+        
+        <div class="light" id="light"></div>
+
+        <table class="linvelocity"> 
+            <tr>
+                <th>Linear Velocity</th>
+                <td><div id="linear">N/A</div></td>
+            </tr>
+        </table>
+
+        <table class="angvelocity">
+            <tr>
+                <th>Angular Velocity</th>
+                <td><div id="angular">N/A</div></td>
+            </tr>
+        </table>
+
+        
+        
+
+
+    </div>
+    
+    
+    
+
+    <script>
+        
+
+        const Div1 = document.getElementById("one");
+        const Div2 = document.getElementById("two");
+        const Div3 = document.getElementById("three");
+        const Div4 = document.getElementById("four");
+        const Div5 = document.getElementById("five");
+        const Div6 = document.getElementById("six");
+        const Div7 = document.getElementById("seven");
+
+        const linveldiv= document.getElementById("linear");  
+        const angularveldiv= document.getElementById("angular");
+
+        
+        var light = document.getElementById("light");
+        var isBlinking = false;
+
+
+        // Create a ROS connection
+        const ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090',  // Adjust the URL to match your ROSBridge server address.
+        });
+
+        const vellistener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/cmd_vel', // Adjust the topic name to match your 'talker.py' topic.
+            messageType: 'geometry_msgs/Twist',
+        });
+
+        // Define a ROS subscriber
+        const listener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/indicator', // Adjust the topic name to match your 'talker.py' topic.
+            messageType: 'std_msgs/String',
+        });
+
+        vellistener.subscribe(function(message) {
+            const linearvel = message.linear.x.toFixed(3);
+            const angularvel = message.angular.z.toFixed(3);
+            linveldiv.innerHTML =  linearvel;
+            angularveldiv.innerHTML =  angularvel;
+        });
+
+        
+
+        // Listen for messages from the ROS topic
+        listener.subscribe(function(message) {
+            
+
+            const text = message.data;
+            
+
+            console.log(message.data);
+
+            if (text === "RED -> Autonomous Mode") {
+                light.style.backgroundColor = "red";
+                autonomous.innerHTML = "Autonomous";
+                stopBlinking();
+
+            } else if (text === "Blue -> Manual Mode") {
+                autonomous.innerHTML = "Manual";
+                light.style.backgroundColor = "#135DD8";
+                stopBlinkingGreen();
+            }
+            else if (text === "Point Reached: 0") {
+                Div1.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+                    
+            }
+            else if (text === "Point Reached: 1") {
+                Div2.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+            else if (text === "Point Reached: 2") {
+                Div3.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+            else if (text === "Point Reached: 3") {
+                Div4.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+            else if (text === "Point Reached: 4") {
+                Div5.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+            else if (text === "Point Reached: 5") {
+                Div6.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+            else if (text === "Point Reached: 6") {
+                Div7.innerHTML = "Reached";
+                if(isBlinking == false){
+                    startBlinking();
+                }
+                else if(isBlinking == true){
+                    console.log(isBlinking);
+                }
+            }
+
+            function startBlinking() {
+            isBlinking = true;
+            light.style.backgroundColor = "green";
+            blinkInterval = setInterval(function () {
+                if (light.style.backgroundColor === "green") {
+                    light.style.backgroundColor = "transparent";
+                } else {
+                    light.style.backgroundColor = "green";
+                }
+            }, 500); // Blink every 500ms
+        }
+
+        function stopBlinking() {
+                light.style.backgroundColor = "red";
+                clearInterval(blinkInterval); // Clear the interval to stop blinking
+                isBlinking = false;
+            }
+
+        function stopBlinkingGreen() {
+            light.style.backgroundColor = "#135DD8";
+            clearInterval(blinkInterval); // Clear the interval to stop blinking
+            isBlinking = false;
+        }
+
+        });
+
+        
+
+    </script>
+</body>
+</html>
