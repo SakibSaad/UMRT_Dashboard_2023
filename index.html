@@ -271,8 +271,8 @@
         vellistener.subscribe(function(message) {
             const linearvel = message.linear.x.toFixed(3);
             const angularvel = message.angular.z.toFixed(3);
-            linveldiv.innerHTML =  linearvel;
-            angularveldiv.innerHTML =  angularvel;
+            linveldiv.innerHTML =  linearvel + " m/s";
+            angularveldiv.innerHTML =  angularvel + " m/s";
         });
 
         
@@ -297,7 +297,9 @@
                 stopBlinkingGreen();
             }
             else if (text === "Point Reached: 0") {
-                Div1.innerHTML = "Reached";
+                // autonomous.innerHTML = "Reached or something like this";
+                Div1.innerHTML = "Reached"; 
+                // Div1.style.color = "green" // make the text bold
                 if(isBlinking == false){
                     startBlinking();
                 }
