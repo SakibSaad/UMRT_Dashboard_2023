@@ -126,8 +126,7 @@
             font-family: sans-serif;
             margin-left: 20px;
             margin-right: 20px;
-            
-        }
+            }
         
         th {
             width: 200px;
@@ -164,32 +163,32 @@
         
         <table class="point">
             <tr>
-                <th>Point 0</th>
-                <td><div id="one">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 0</th>
+                <td style="border: 1px solid #F5882E;"><div id="one">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 1</th>
-                <td><div id="two">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 1</th>
+                <td style="border: 1px solid #F5882E;"><div id="two">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 2</th>
-                <td><div id="three">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 2</th>
+                <td style="border: 1px solid #F5882E;"><div id="three">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 3</th>
-                <td><div id="four">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 3</th>
+                <td style="border: 1px solid #F5882E;"><div id="four">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 4</th>
-                <td><div id="five">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 4</th>
+                <td style="border: 1px solid #F5882E;"><div id="five">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 5</th>
-                <td><div id="six">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 5</th>
+                <td style="border: 1px solid #F5882E;"><div id="six">N/A</div></td>
             </tr>
             <tr>
-                <th>Point 6</th>
-                <td><div id="seven">N/A</div></td>
+                <th style="border: 1px solid #F5882E;">Point 6</th>
+                <td style="border: 1px solid #F5882E;"><div id="seven">N/A</div></td>
             </tr>
         </table>
       </div>
@@ -269,8 +268,10 @@
         });
 
         vellistener.subscribe(function(message) {
-            const linearvel = message.linear.x.toFixed(3);
+            const linearvel = message.linear.x.toFixed(3);         
             const angularvel = message.angular.z.toFixed(3);
+            linveldiv.style.color = "black";
+            angularveldiv.style.color = "black";
             linveldiv.innerHTML =  linearvel + " m/s";
             angularveldiv.innerHTML =  angularvel + " m/s";
         });
@@ -289,17 +290,19 @@
             if (text === "RED -> Autonomous Mode") {
                 light.style.backgroundColor = "red";
                 autonomous.innerHTML = "Autonomous";
+                autonomous.style.color = "red";
                 stopBlinking();
 
             } else if (text === "Blue -> Manual Mode") {
                 autonomous.innerHTML = "Manual";
+                autonomous.style.color = "blue";
                 light.style.backgroundColor = "#135DD8";
                 stopBlinkingGreen();
             }
             else if (text === "Point Reached: 0") {
-                // autonomous.innerHTML = "Reached or something like this";
+                autonomous.innerHTML = "Reached or something like this";
                 Div1.innerHTML = "Reached"; 
-                // Div1.style.color = "green" // make the text bold
+                Div1.style.color = "green"; // make the text bold
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -310,6 +313,7 @@
             }
             else if (text === "Point Reached: 1") {
                 Div2.innerHTML = "Reached";
+                Div2.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -319,6 +323,7 @@
             }
             else if (text === "Point Reached: 2") {
                 Div3.innerHTML = "Reached";
+                Div3.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -328,6 +333,7 @@
             }
             else if (text === "Point Reached: 3") {
                 Div4.innerHTML = "Reached";
+                Div4.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -337,6 +343,7 @@
             }
             else if (text === "Point Reached: 4") {
                 Div5.innerHTML = "Reached";
+                Div5.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -346,6 +353,7 @@
             }
             else if (text === "Point Reached: 5") {
                 Div6.innerHTML = "Reached";
+                Div6.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -355,6 +363,7 @@
             }
             else if (text === "Point Reached: 6") {
                 Div7.innerHTML = "Reached";
+                Div7.style.color = "green";
                 if(isBlinking == false){
                     startBlinking();
                 }
