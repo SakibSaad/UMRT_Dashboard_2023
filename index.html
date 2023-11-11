@@ -23,7 +23,7 @@
             display: flex;
             width: 90%;
             height: 49%;
-            border: 1px solid red;
+            border: 3px solid #D95A27;
             margin-left: 10px;
             margin-right: 10px;
             margin-bottom: 40px;
@@ -33,7 +33,7 @@
             display: flex;
             width: 90%;
             height: 49%;
-            border: 1px solid red;
+            border: 3px solid #D95A27;
             margin-left: 10px;
             margin-right: 10px;
         }
@@ -41,7 +41,7 @@
         .side-by-side-div {
             width: 90%;
             height: 100%;
-            border: 1px solid #D95A27;
+            border: 3px solid #D95A27;
         }
 
         body {
@@ -87,59 +87,70 @@
             margin-left: 5px;
         }
         
-    
+        /* .point-table{
+            height: 600px;
+            border: 1px solid red;
+        } */
         .autonomous {
             /* width: 30%; Set a width for the table, adjust as needed
             margin: 0 auto; Center the table horizontally
             margin-top: 100px;
             margin-bottom: 100px; */
             table-layout: fixed;
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
             font-size: 20px;
             font-family: sans-serif;
             margin-left: 80px;
             padding: 0px;
+            border-spacing: 10px;
         }
 
         .angvelocity{
             table-layout: fixed;
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
             font-size: 20px;
             font-family: sans-serif;
             margin-left: 80px;
             padding: 0px;
+            border-spacing: 10px;
         }
 
         .linvelocity{
             table-layout: fixed;
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
             font-size: 20px;
             font-family: sans-serif;
             margin-left: 80px;
             padding: 0px;
+            border-spacing: 10px;
         }
     
         .point {
             table-layout: fixed;
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
             font-size: 20px;
             font-family: sans-serif;
             margin-left: 20px;
             margin-right: 20px;
+            height: 500px;
+            border-spacing: 10px;
             }
         
         th {
             width: 200px;
-            border: 1px solid #F5882E;
+            border: 3px solid #F5882E;
             text-align: center;
             color: #D95A27;
+            padding: 2px;
         }
 
         td {
-            width: 150px;
-            border: 1px solid #F5882E;
+            width: 200px;
+            border: 3px solid #F5882E;
             text-align: center;
             color: #F5882E;
+            font-weight: bold;
+            padding: 2px;
         }
     </style>
 
@@ -160,37 +171,39 @@
         <div class="side-by-side-div">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.5823360348827!2d90.44713507620115!3d23.797882878638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7d8042caf2d%3A0x686fa3e360361ddf!2sUnited%20International%20University!5e0!3m2!1sen!2sbd!4v1699432182382!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        
-        <table class="point">
-            <tr>
-                <th>Point 0</th>
-                <td><div id="one">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 1</th>
-                <td><div id="two">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 2</th>
-                <td><div id="three">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 3</th>
-                <td><div id="four">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 4</th>
-                <td><div id="five">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 5</th>
-                <td><div id="six">N/A</div></td>
-            </tr>
-            <tr>
-                <th>Point 6</th>
-                <td><div id="seven">N/A</div></td>
-            </tr>
-        </table>
+        <div class="point-table">
+            <table class="point">
+                <tr>
+                    <th>Point 0</th>
+                    <td><div id="one">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 1</th>
+                    <td><div id="two">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 2</th>
+                    <td><div id="three">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 3</th>
+                    <td><div id="four">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 4</th>
+                    <td><div id="five">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 5</th>
+                    <td><div id="six">N/A</div></td>
+                </tr>
+                <tr>
+                    <th>Point 6</th>
+                    <td><div id="seven">N/A</div></td>
+                </tr>
+            </table>
+        </div>
+       
       </div>
     
     
