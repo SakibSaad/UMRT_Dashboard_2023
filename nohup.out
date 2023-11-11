@@ -1,0 +1,12 @@
+[INFO] [launch]: All log files can be found below /home/neo/.ros/log/2023-11-11-23-22-12-037836-matrix-2085
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [rosbridge_websocket-1]: process started with pid [2116]
+[INFO] [rosapi_node-2]: process started with pid [2118]
+[rosbridge_websocket-1] [INFO] [1699723333.961982163] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+127.0.0.1 - - [11/Nov/2023 23:22:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [11/Nov/2023 23:22:22] "GET /asset/roslib.min.js HTTP/1.1" 200 -
+[rosbridge_websocket-1] [INFO] [1699723342.334167593] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1699723342.336974584] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1699723342.483021288] [rosbridge_websocket]: [Client 620781f3-ab2a-4819-ab5e-6925cd906dda] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1699723342.486477454] [rosbridge_websocket]: [Client 620781f3-ab2a-4819-ab5e-6925cd906dda] Subscribed to /indicator
+[rosbridge_websocket-1] [INFO] [1699723568.927905464] [rosbridge_websocket]: Client disconnected. 0 clients total.
