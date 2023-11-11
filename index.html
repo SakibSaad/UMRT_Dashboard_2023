@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Autonomous Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/galactic-vanguardian-ncv" rel="stylesheet">
+                          
     <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.1.0/roslib.min.js"></script>
     <style>
 
@@ -67,7 +72,11 @@
             margin-top: 10px;
             margin-right: 50px;
             font-size: 50px;
-            font-family: sans-serif;
+            /* font-family: 'Cosmic', sans-serif; */
+            /* font-family: 'Kenia', sans-serif; */
+            font-family: 'GALACTIC VANGUARDIAN NCV', sans-serif;
+                                                
+                                                
         }
 
         .status{
@@ -98,18 +107,19 @@
             margin-bottom: 100px; */
             table-layout: fixed;
             /* border-collapse: collapse; */
-            font-size: 20px;
-            font-family: sans-serif;
+            font-size: 22px;
+            font-family: 'JetBrains Mono', monospace;
             margin-left: 80px;
             padding: 0px;
             border-spacing: 10px;
+
         }
 
         .angvelocity{
             table-layout: fixed;
             /* border-collapse: collapse; */
-            font-size: 20px;
-            font-family: sans-serif;
+            font-size: 22px;
+            font-family: 'JetBrains Mono', monospace;
             margin-left: 80px;
             padding: 0px;
             border-spacing: 10px;
@@ -118,8 +128,8 @@
         .linvelocity{
             table-layout: fixed;
             /* border-collapse: collapse; */
-            font-size: 20px;
-            font-family: sans-serif;
+            font-size: 22px;
+            font-family: 'JetBrains Mono', monospace;
             margin-left: 80px;
             padding: 0px;
             border-spacing: 10px;
@@ -128,8 +138,8 @@
         .point {
             table-layout: fixed;
             /* border-collapse: collapse; */
-            font-size: 20px;
-            font-family: sans-serif;
+            font-size: 22px;
+            font-family: 'JetBrains Mono', monospace;
             margin-left: 20px;
             margin-right: 20px;
             height: 500px;
@@ -137,11 +147,13 @@
             }
         
         th {
-            width: 200px;
+            width: 300px;
             border: 3px solid #F5882E;
             text-align: center;
             color: #D95A27;
             padding: 2px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 28px;
         }
 
         td {
@@ -151,12 +163,14 @@
             color: #F5882E;
             font-weight: bold;
             padding: 2px;
+            font-size: 30px;
         }
     </style>
 
 </head>
 <body>
     <div class="first">
+        <!-- <label><b>AUTONOMOUS DASHBOARD</b></label>  -->
         <label><b>Autonomous Dashboard</b></label> 
 
         <img class="logo" src="asset/UMRT new logo.png" alt="">
@@ -302,12 +316,12 @@
 
             if (text === "RED -> Autonomous Mode") {
                 light.style.backgroundColor = "red";
-                autonomous.innerHTML = "Autonomous";
+                autonomous.innerHTML = "AUTONOMOUS";
                 autonomous.style.color = "red";
                 stopBlinking();
 
             } else if (text === "Blue -> Manual Mode") {
-                autonomous.innerHTML = "Manual";
+                autonomous.innerHTML = "MANUAL";
                 autonomous.style.color = "blue";
                 light.style.backgroundColor = "#135DD8";
                 stopBlinkingGreen();
