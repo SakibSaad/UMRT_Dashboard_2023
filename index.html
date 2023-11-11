@@ -208,7 +208,7 @@
     
     
 
-    <div class="status">
+    <div class="status" style="border: 1px solid red;">
 
         <table class="autonomous">
             <tr>
@@ -313,7 +313,6 @@
                 stopBlinkingGreen();
             }
             else if (text === "Point Reached: 0") {
-                autonomous.innerHTML = "Reached";
                 Div1.innerHTML = "Reached"; 
                 Div1.style.color = "green"; // make the text bold
                 if(isBlinking == false){
