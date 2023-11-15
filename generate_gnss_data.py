@@ -5,8 +5,8 @@ from sensor_msgs.msg import NavSatFix
 
 class GNSSPublisherNode(Node):
     def __init__(self):
-        super().__init__('gnss_publisher')
-        self.publisher = self.create_publisher(NavSatFix, '/gnss_data', 10)
+        super().__init__('nav_sat_publisher')
+        self.publisher = self.create_publisher(NavSatFix, '/nav_sat', 10)
         self.get_logger().info("GNSS publisher node is ready.")
         self.gps_msg = NavSatFix()
         self.gps_msg.latitude = 23.798797
