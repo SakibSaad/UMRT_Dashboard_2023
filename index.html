@@ -281,9 +281,9 @@
             url: 'ws://localhost:9090',  // Adjust the URL to match your ROSBridge server address.
         });
 
-        const vellistener = new ROSLIB.Topic({
+        const velListener = new ROSLIB.Topic({
             ros: ros,
-            name: '/cmd_vel', // Adjust the topic name to match your 'talker.py' topic.
+            name: '/cmd_vel', // velocity topic
             messageType: 'geometry_msgs/Twist',
         });
 
@@ -294,13 +294,13 @@
         });
 
         // Define a ROS subscriber
-        const listener = new ROSLIB.Topic({
+        const indicatorListener = new ROSLIB.Topic({
             ros: ros,
-            name: '/indicator', // Adjust the topic name to match your 'talker.py' topic.
+            name: '/indicator', // indicator message
             messageType: 'std_msgs/String',
         });
 
-        vellistener.subscribe(function(message) {
+        velListener.subscribe(function(message) {
             const linearvel = message.linear.x.toFixed(3);         
             const angularvel = message.angular.z.toFixed(3);
             linveldiv.style.color = "black";
@@ -322,7 +322,7 @@
         
 
         // Listen for messages from the ROS topic
-        listener.subscribe(function(message) {
+        indicatorListener.subscribe(function(message) {
             
 
             const text = message.data;
