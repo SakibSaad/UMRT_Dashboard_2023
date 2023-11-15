@@ -1,0 +1,29 @@
+[INFO] [launch]: All log files can be found below /home/neo/.ros/log/2023-11-16-01-06-50-632826-matrix-528115
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [rosbridge_websocket-1]: process started with pid [528149]
+[INFO] [rosapi_node-2]: process started with pid [528151]
+[rosbridge_websocket-1] [INFO] [1700075211.316777163] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+127.0.0.1 - - [16/Nov/2023 01:06:54] "GET / HTTP/1.1" 200 -
+[rosbridge_websocket-1] [INFO] [1700075214.852095594] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1700075214.853356657] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1700075214.881610084] [rosbridge_websocket]: [Client 9c2c1692-c208-4ad4-be83-a9ff2958f809] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1700075214.883012294] [rosbridge_websocket]: [Client 9c2c1692-c208-4ad4-be83-a9ff2958f809] Subscribed to /indicator
+127.0.0.1 - - [16/Nov/2023 01:07:42] "GET / HTTP/1.1" 200 -
+[rosbridge_websocket-1] [INFO] [1700075262.319399501] [rosbridge_websocket]: Client disconnected. 0 clients total.
+[rosbridge_websocket-1] [INFO] [1700075262.344042941] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1700075262.345715861] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1700075262.370235287] [rosbridge_websocket]: [Client 99ff8f8b-2251-43f3-8fc2-0ecd91acc472] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1700075262.372158438] [rosbridge_websocket]: [Client 99ff8f8b-2251-43f3-8fc2-0ecd91acc472] Subscribed to /indicator
+127.0.0.1 - - [16/Nov/2023 01:07:44] "GET / HTTP/1.1" 304 -
+[rosbridge_websocket-1] [INFO] [1700075264.993747155] [rosbridge_websocket]: Client disconnected. 0 clients total.
+[rosbridge_websocket-1] [INFO] [1700075265.016789080] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1700075265.018587717] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1700075265.021743048] [rosbridge_websocket]: [Client 2587a78e-4eec-4732-8056-44ff0a2a68f2] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1700075265.024205134] [rosbridge_websocket]: [Client 2587a78e-4eec-4732-8056-44ff0a2a68f2] Subscribed to /indicator
+127.0.0.1 - - [16/Nov/2023 01:08:05] "GET / HTTP/1.1" 304 -
+[rosbridge_websocket-1] [INFO] [1700075285.310349733] [rosbridge_websocket]: Client disconnected. 0 clients total.
+[rosbridge_websocket-1] [INFO] [1700075285.335801369] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1700075285.337445494] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1700075285.350825298] [rosbridge_websocket]: [Client cb4634ad-7d4f-4f78-9e25-caf78b118128] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1700075285.352783556] [rosbridge_websocket]: [Client cb4634ad-7d4f-4f78-9e25-caf78b118128] Subscribed to /indicator
+[rosbridge_websocket-1] [INFO] [1700075315.275751665] [rosbridge_websocket]: Client disconnected. 0 clients total.
