@@ -287,6 +287,12 @@
             messageType: 'geometry_msgs/Twist',
         });
 
+        const navsatfixListener = new ROSLIB.Topic({
+            ros: ros,
+            name: '/nav_sat', // navSatFix message
+            messageType: 'sensor_msgs/NavSatFix'
+        });
+
         // Define a ROS subscriber
         const listener = new ROSLIB.Topic({
             ros: ros,
@@ -302,6 +308,16 @@
             linveldiv.innerHTML =  linearvel + " m/s";
             angularveldiv.innerHTML =  angularvel + " m/s";
         });
+
+
+        // navsatfixListener.subscribe(function(message) {
+        //     latitude = message.latitude.toFixed(7);         
+        //     longitude = message.longitude.toFixed(7);
+        //     linveldiv.style.color = "black";
+        //     angularveldiv.style.color = "black";
+        //     linveldiv.innerHTML =  latitude;
+        //     angularveldiv.innerHTML =  longitude;
+        // });
 
         
 
