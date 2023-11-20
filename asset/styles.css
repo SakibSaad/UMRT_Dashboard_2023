@@ -13,3 +13,225 @@
     font-weight: 400;
     src: local('GALACTIC VANGUARDIAN NCV'), url('galactic-vanguardian-ncv.woff') format('woff');
 }
+
+.header{
+    display: flex;
+    /* border: 1px solid black; */
+    margin-left: 400px;
+}
+
+.header-one{
+    margin-top: 25px;
+}
+
+.header-two{
+    margin-left: 10px;
+}
+
+
+label {
+    color: #D95A27;    
+    font-size: 50px;
+    /* border: 1px solid black; */
+    /* font-family: 'Cosmic', sans-serif; */
+    /* font-family: 'Kenia', sans-serif; */
+    font-family: 'GALACTIC VANGUARDIAN NCV', sans-serif;                                     
+}
+
+.main{
+    /* border: 1px solid black; */
+    height: 830px;
+}
+
+.first {
+    /* display: flex; */
+    /* justify-content: center; Center the content horizontally */
+    /* align-items: center; Center the content vertically if needed */
+    
+    border: 1px solid #D95A27;
+    height: 100px;
+    width: 900px;
+}
+
+.container {
+    width: 1400px;
+    height: 720px;
+    display: flex;
+    margin-top: 10px; 
+    /* border: 1px solid red; */
+}
+
+.column-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;        
+}
+
+.one {
+    display: flex;
+    width: 90%;
+    height: 49%;
+    border: 3px solid #D95A27;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+
+.two{
+    display: flex;
+    width: 90%;
+    height: 49%;
+    border: 3px solid #D95A27;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.side-by-side-div {
+    width: 90%;
+    height: 100%;
+    border: 3px solid #D95A27;
+}
+
+.point {
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 1420px;
+    margin-right: 10px;
+    height: 500px;
+    border-spacing: 10px;
+    margin-top: -840px;
+    }
+
+.point-two{
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 1420px;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 400px;
+    border-spacing: 5px;
+    
+    /* border: 1px solid brown; */
+
+}
+
+
+
+th {
+    width: 300px;
+    border: 3px solid #F5882E;
+    text-align: center;
+    color: #D95A27;
+    padding: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px; 
+}
+
+td {
+    width: 200px;
+    border: 3px solid #F5882E;
+    text-align: center;
+    color: #F5882E;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 30px;
+}
+
+
+.status{
+    width: 1600px;
+    display: flex;
+    /* justify-content: center; */
+    /* border: 3px solid brown; */
+    margin-top: -100px;
+}
+
+.light {
+    width: 50px;
+    height: 80px; /* Set both width and height to the same value */
+    transition: background-color 0.5s;
+    /* margin: 0 auto; Center the element horizontally
+    margin-top: 50px;
+    margin-bottom: 100px; */
+    /* background-color: red; */
+    margin-left: 5px;
+}
+
+/* .point-table{
+    height: 600px;
+    border: 1px solid red;
+} */
+
+.autonomous {
+    /* width: 30%; Set a width for the table, adjust as needed
+    margin: 0 auto; Center the table horizontally
+    margin-top: 100px;
+    margin-bottom: 100px; */
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    /* margin-left: 80px; */
+    padding: 0px;
+    border-spacing: 10px;
+
+}
+
+.angvelocity{
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 2px;
+    padding: 0px;
+    border-spacing: 10px;
+}
+
+.linvelocity{
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    font-size: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    margin-left: 10px;
+    padding: 0px;
+    border-spacing: 10px;
+}
+
+.autoHead{
+    width: 200px;
+    border: 3px solid #F5882E;
+    text-align: center;
+    color: #D95A27;
+    padding: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+}
+
+.autoRow{
+    width: 200px;
+    border: 3px solid #F5882E;
+    text-align: center;
+    color: #F5882E;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 30px;
+}
+
+
+body {
+    /* text-align: center; Center content in the body element */
+    background-color: #ffecde;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+
+
