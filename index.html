@@ -75,36 +75,36 @@
         <div class="table-two">
             <table class="point-two">
                 <tr>
-                    <th>Post 1</th>
-                    <td>
+                    <th class="t2-h">Post 1</th>
+                    <td class="t2-d">
                         <div id="Post1Lat">N/A</div>
                         <div id="Post1Lon">N/A</div>
                     </td>
                 </tr>
                 <tr>
-                    <th>Post 2</th>
-                    <td>
+                    <th class="t2-h">Post 2</th>
+                    <td class="t2-d">
                         <div id="Post2Lat">N/A</div>
                         <div id="Post2Lon">N/A</div>           
                     </td>
                 </tr>
                 <tr>
-                    <th>Post 3</th>
-                    <td>
+                    <th class="t2-h">Post 3</th>
+                    <td class="t2-d">
                         <div id="Post3Lat">N/A</div>
                         <div id="Post3Lon">N/A</div>
                     </td>
                 </tr>
                 <tr>
-                    <th>Obj 1</th>
-                    <td>
+                    <th class="t2-h">Object 1</th>
+                    <td class="t2-d">
                         <div id="Obj1Lat">N/A</div>
                         <div id="Obj1Lon">N/A</div>
                     </td>
                 </tr>
                 <tr>
-                    <th>Obj 2</th>
-                    <td>
+                    <th class="t2-h">Object 2</th>
+                    <td class="t2-d">
                         <div id="Obj2Lat">N/A</div>
                         <div id="Obj2Lon">N/A</div>
                     </td>
@@ -229,17 +229,19 @@
                 autonomous.style.color = "blue";
                 light.style.backgroundColor = "#135DD8";
                 stopBlinkingGreen();
-
             }
             else if (text === "Point Reached: 0") {
                 Div1.innerHTML = "Reached"; 
                 Div1.style.color = "green"; // make the text bold
+                
+                
                 if(isBlinking == false){
                     startBlinking();
                 }
                 else if(isBlinking == true){
                     console.log(isBlinking);
                 }
+                    
             }
             else if (text === "Point Reached: 1") {
                 Div2.innerHTML = "Reached";
@@ -257,7 +259,6 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post1Lat.innerHTML = `${latitude}`;
                 Post1Lon.innerHTML = `${longitude}`;
-                // console.log(`${latitude}`);
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -281,9 +282,9 @@
             else if (text === "Point Reached: 4") {
                 Div5.innerHTML = "Reached";
                 Div5.style.color = "green";
+                // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post3Lat.innerHTML = `${latitude}`;
                 Post3Lon.innerHTML = `${longitude}`;
-                // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 if(isBlinking == false){
                     startBlinking();
                 }
