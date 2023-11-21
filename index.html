@@ -229,28 +229,21 @@
                 autonomous.style.color = "blue";
                 light.style.backgroundColor = "#135DD8";
                 stopBlinkingGreen();
+
             }
             else if (text === "Point Reached: 0") {
                 Div1.innerHTML = "Reached"; 
-                Post1Lat.innerHTML = `${latitude}`;
-                Post1Lon.innerHTML = `${longitude}`;
-                console.log(`${latitude}`);
                 Div1.style.color = "green"; // make the text bold
-                
-
                 if(isBlinking == false){
                     startBlinking();
                 }
                 else if(isBlinking == true){
                     console.log(isBlinking);
                 }
-                    
             }
             else if (text === "Point Reached: 1") {
                 Div2.innerHTML = "Reached";
                 Div2.style.color = "green";
-                Post2Lat.innerHTML = `${latitude}`;
-                Post2Lon.innerHTML = `${longitude}`;
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -261,9 +254,10 @@
             else if (text === "Point Reached: 2") {
                 Div3.innerHTML = "Reached";
                 Div3.style.color = "green";
-                Post3Lat.innerHTML = `${latitude}`;
-                Post3Lon.innerHTML = `${longitude}`;
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
+                Post1Lat.innerHTML = `${latitude}`;
+                Post1Lon.innerHTML = `${longitude}`;
+                // console.log(`${latitude}`);
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -274,9 +268,9 @@
             else if (text === "Point Reached: 3") {
                 Div4.innerHTML = "Reached";
                 Div4.style.color = "green";
-                Obj1Lat.innerHTML = `${latitude}`;
-                Obj1Lon.innerHTML = `${longitude}`;
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
+                Post2Lat.innerHTML = `${latitude}`;
+                Post2Lon.innerHTML = `${longitude}`;
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -287,8 +281,8 @@
             else if (text === "Point Reached: 4") {
                 Div5.innerHTML = "Reached";
                 Div5.style.color = "green";
-                Obj2Lat.innerHTML = `${latitude}`;
-                Obj2Lon.innerHTML = `${longitude}`;
+                Post3Lat.innerHTML = `${latitude}`;
+                Post3Lon.innerHTML = `${longitude}`;
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 if(isBlinking == false){
                     startBlinking();
@@ -301,6 +295,8 @@
                 Div6.innerHTML = "Reached";
                 Div6.style.color = "green";
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat datasave post coordinate by reading current /nav_sat data
+                Obj1Lat.innerHTML = `${latitude}`;
+                Obj1Lon.innerHTML = `${longitude}`;
                 if(isBlinking == false){
                     startBlinking();
                 }
@@ -312,6 +308,8 @@
                 Div7.innerHTML = "Reached";
                 Div7.style.color = "green";
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
+                Obj2Lat.innerHTML = `${latitude}`;
+                Obj2Lon.innerHTML = `${longitude}`;
                 if(isBlinking == false){
                     startBlinking();
                 }
