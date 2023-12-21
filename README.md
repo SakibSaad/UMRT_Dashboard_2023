@@ -9,6 +9,10 @@
     ```shell
     source /opt/ros/<ROS_DISTRO>/setup.bash
     ```
+3. Install script dependencies
+    ```shell
+    sudo apt install expect -y
+    ```
 
 ## Launch RosBridge:
 1. Launch the RosBridge server with the following command:
