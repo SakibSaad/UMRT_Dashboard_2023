@@ -1,150 +1,183 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Autonomous Dashboard</title>
-    
+
     <!-- using locally hosted roslib and fonts -->
     <!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/asset/styles.css"> -->
     <link rel="stylesheet" type="text/css" href="asset/styles.css">
     <script type="text/javascript" src="http://localhost:8000/asset/roslib.min.js"></script>
+    <link rel="stylesheet" href="./leaflet/leaflet.css" />
 
 </head>
+<style>
+    #map {
+        /* height: 600px;
+        width: 100%;
+        border-radius: auto; */
+        width: 90%;
+        height: 100%;
+        border: 3px solid #D95A27;
+    }
+</style>
+
 <body>
     <div class="header">
         <div class="header-one">
-            <label><b>Autonomous Mission</b></label> 
+            <label><b>Autonomous Mission</b></label>
         </div>
         <div class="header-two">
             <img class="logo" src="asset/UMRT new logo.png" alt="">
         </div>
     </div>
-    
+
 
     <div class="main">
-        
-            <!-- <label><b>AUTONOMOUS DASHBOARD</b></label>  -->
-            
-        
+
+        <!-- <label><b>AUTONOMOUS DASHBOARD</b></label>  -->
+
 
         <div class="container">
-            
+
             <div class="column-container">
-              <div class="one"></div>
-              <div class="two"></div>
+                <div class="one"></div>
+                <div class="two"></div>
             </div>
-            <div class="side-by-side-div">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.5823360348827!2d90.44713507620115!3d23.797882878638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7d8042caf2d%3A0x686fa3e360361ddf!2sUnited%20International%20University!5e0!3m2!1sen!2sbd!4v1699432182382!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            
-           
-        </div>
+            <!-- <div class="side-by-side-div" > -->
+            <div id="map"></div>
 
-        <div class="point-table">
-            <table class="point">
-                <tr>
-                    <th>Point 0</th>
-                    <td><div id="one">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 1</th>
-                    <td><div id="two">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 2</th>
-                    <td><div id="three">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 3</th>
-                    <td><div id="four">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 4</th>
-                    <td><div id="five">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 5</th>
-                    <td><div id="six">N/A</div></td>
-                </tr>
-                <tr>
-                    <th>Point 6</th>
-                    <td><div id="seven">N/A</div></td>
-                </tr>
-            </table>
         </div>
+        <script src="./leaflet/leaflet.js"></script>
+    </div>
 
-        <div class="table-two">
-            <table class="point-two">
-                <tr>
-                    <th class="t2-h">Post 1</th>
-                    <td class="t2-d">
-                        <div id="Post1Lat">N/A</div>
-                        <div id="Post1Lon">N/A</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="t2-h">Post 2</th>
-                    <td class="t2-d">
-                        <div id="Post2Lat">N/A</div>
-                        <div id="Post2Lon">N/A</div>           
-                    </td>
-                </tr>
-                <tr>
-                    <th class="t2-h">Post 3</th>
-                    <td class="t2-d">
-                        <div id="Post3Lat">N/A</div>
-                        <div id="Post3Lon">N/A</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="t2-h">Object 1</th>
-                    <td class="t2-d">
-                        <div id="Obj1Lat">N/A</div>
-                        <div id="Obj1Lon">N/A</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="t2-h">Object 2</th>
-                    <td class="t2-d">
-                        <div id="Obj2Lat">N/A</div>
-                        <div id="Obj2Lon">N/A</div>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="point-table">
+        <table class="point" style="margin-top: -840px;">
+            <tr>
+                <th>Point 0</th>
+                <td>
+                    <div id="one">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 1</th>
+                <td>
+                    <div id="two">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 2</th>
+                <td>
+                    <div id="three">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 3</th>
+                <td>
+                    <div id="four">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 4</th>
+                <td>
+                    <div id="five">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 5</th>
+                <td>
+                    <div id="six">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Point 6</th>
+                <td>
+                    <div id="seven">N/A</div>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-        <div class="status">
+    <div class="table-two">
+        <table class="point-two">
+            <tr>
+                <th class="t2-h">Post 1</th>
+                <td class="t2-d">
+                    <div id="Post1Lat">N/A</div>
+                    <div id="Post1Lon">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="t2-h">Post 2</th>
+                <td class="t2-d">
+                    <div id="Post2Lat">N/A</div>
+                    <div id="Post2Lon">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="t2-h">Post 3</th>
+                <td class="t2-d">
+                    <div id="Post3Lat">N/A</div>
+                    <div id="Post3Lon">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="t2-h">Object 1</th>
+                <td class="t2-d">
+                    <div id="Obj1Lat">N/A</div>
+                    <div id="Obj1Lon">N/A</div>
+                </td>
+            </tr>
+            <tr>
+                <th class="t2-h">Object 2</th>
+                <td class="t2-d">
+                    <div id="Obj2Lat">N/A</div>
+                    <div id="Obj2Lon">N/A</div>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-            <table class="autonomous">
-                <tr>
-                    <th class="autoHead">MODE</th>
-                    <td class="autoRow"><div id="autonomous">N/A</div></td>
-                </tr>
-    
-            </table>
-            
-            <div class="light" id="light"></div>
-    
-            <table class="linvelocity"> 
-                <tr>
-                    <th class="autoHead">Linear Vel</th>
-                    <td class="autoRow"><div id="linear">N/A</div></td>
-                </tr>
-            </table>
-    
-            <table class="angvelocity">
-                <tr>
-                    <th class="autoHead">Angular Vel</th>
-                    <td class="autoRow"><div id="angular">N/A</div></td>
-                </tr>
-            </table>
-    
-        </div>
+    <div class="status">
+
+        <table class="autonomous">
+            <tr>
+                <th class="autoHead">MODE</th>
+                <td class="autoRow">
+                    <div id="autonomous">N/A</div>
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="light" id="light"></div>
+
+        <table class="linvelocity">
+            <tr>
+                <th class="autoHead">Linear Vel</th>
+                <td class="autoRow">
+                    <div id="linear">N/A</div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="angvelocity">
+            <tr>
+                <th class="autoHead">Angular Vel</th>
+                <td class="autoRow">
+                    <div id="angular">N/A</div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
 
     </div>
 
 
     <script>
-        
+
+        var gps_list = [];
 
         const Div1 = document.getElementById("one");
         const Div2 = document.getElementById("two");
@@ -154,14 +187,14 @@
         const Div6 = document.getElementById("six");
         const Div7 = document.getElementById("seven");
 
-        const linveldiv= document.getElementById("linear");  
-        const angularveldiv= document.getElementById("angular");
+        const linveldiv = document.getElementById("linear");
+        const angularveldiv = document.getElementById("angular");
 
         let latitude = 0;
         let longitude = 0;
 
 
-        
+
         var light = document.getElementById("light");
         var isBlinking = false;
 
@@ -190,31 +223,34 @@
             messageType: 'std_msgs/String',
         });
 
-        velListener.subscribe(function(message) {
-            const linearvel = message.linear.x.toFixed(3);         
+        velListener.subscribe(function (message) {
+            const linearvel = message.linear.x.toFixed(3);
             const angularvel = message.angular.z.toFixed(3);
             linveldiv.style.color = "black";
             angularveldiv.style.color = "black";
-            linveldiv.innerHTML =  linearvel + " m/s";
-            angularveldiv.innerHTML =  angularvel + " m/s";
+            linveldiv.innerHTML = linearvel + " m/s";
+            angularveldiv.innerHTML = angularvel + " m/s";
         });
 
 
-        navsatfixListener.subscribe(function(message) {
-            latitude = message.latitude.toFixed(7);         
+        navsatfixListener.subscribe(function (message) {
+            latitude = message.latitude.toFixed(7);
             longitude = message.longitude.toFixed(7);
-            // console.log(latitude);
-            // console.log(longitude);
+            console.log(latitude);
+            console.log(longitude);
+
+            showDot(latitude, longitude);
+
         });
 
-        
+
 
         // Listen for messages from the ROS topic
-        indicatorListener.subscribe(function(message) {
-            
+        indicatorListener.subscribe(function (message) {
+
 
             const text = message.data;
-            
+
 
             console.log(message.data);
 
@@ -231,25 +267,29 @@
                 stopBlinkingGreen();
             }
             else if (text === "Point Reached: 0") {
-                Div1.innerHTML = "Reached"; 
+                Div1.innerHTML = "Reached";
                 Div1.style.color = "green"; // make the text bold
-                
-                
-                if(isBlinking == false){
+
+                showGreen(latitude,longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
-                    
+
             }
             else if (text === "Point Reached: 1") {
                 Div2.innerHTML = "Reached";
                 Div2.style.color = "green";
-                if(isBlinking == false){
+
+                showGreen(latitude,longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
@@ -259,10 +299,13 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post1Lat.innerHTML = `${latitude}`;
                 Post1Lon.innerHTML = `${longitude}`;
-                if(isBlinking == false){
+
+                showAruco(latitude, longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
@@ -272,10 +315,13 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post2Lat.innerHTML = `${latitude}`;
                 Post2Lon.innerHTML = `${longitude}`;
-                if(isBlinking == false){
+
+                showAruco(latitude, longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
@@ -285,10 +331,13 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post3Lat.innerHTML = `${latitude}`;
                 Post3Lon.innerHTML = `${longitude}`;
-                if(isBlinking == false){
+
+                showAruco(latitude, longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
@@ -298,10 +347,13 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat datasave post coordinate by reading current /nav_sat data
                 Obj1Lat.innerHTML = `${latitude}`;
                 Obj1Lon.innerHTML = `${longitude}`;
-                if(isBlinking == false){
+
+                showHammer(latitude, longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
@@ -311,42 +363,196 @@
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Obj2Lat.innerHTML = `${latitude}`;
                 Obj2Lon.innerHTML = `${longitude}`;
-                if(isBlinking == false){
+
+                showBottle(latitude, longitude);
+
+                if (isBlinking == false) {
                     startBlinking();
                 }
-                else if(isBlinking == true){
+                else if (isBlinking == true) {
                     console.log(isBlinking);
                 }
             }
 
             function startBlinking() {
-            isBlinking = true;
-            light.style.backgroundColor = "green";
-            blinkInterval = setInterval(function () {
-                if (light.style.backgroundColor === "green") {
-                    light.style.backgroundColor = "transparent";
-                } else {
-                    light.style.backgroundColor = "green";
-                }
-            }, 500); // Blink every 500ms
-        }
+                isBlinking = true;
+                light.style.backgroundColor = "green";
+                blinkInterval = setInterval(function () {
+                    if (light.style.backgroundColor === "green") {
+                        light.style.backgroundColor = "transparent";
+                    } else {
+                        light.style.backgroundColor = "green";
+                    }
+                }, 500); // Blink every 500ms
+            }
 
-        function stopBlinking() {
+            function stopBlinking() {
                 light.style.backgroundColor = "red";
                 clearInterval(blinkInterval); // Clear the interval to stop blinking
                 isBlinking = false;
             }
 
-        function stopBlinkingGreen() {
-            light.style.backgroundColor = "#135DD8";
-            clearInterval(blinkInterval); // Clear the interval to stop blinking
-            isBlinking = false;
-        }
+            function stopBlinkingGreen() {
+                light.style.backgroundColor = "#135DD8";
+                clearInterval(blinkInterval); // Clear the interval to stop blinking
+                isBlinking = false;
+            }
 
         });
 
-        
+        function showCoordinates(lat, lng) {
+            fetch('gps_data.json')
+                .then(response => response.json())
+                .then(coordinatesArray => {
+                    var centerLat = coordinatesArray[0][0];
+                    var centerLong = coordinatesArray[0][1];
+
+                    map = L.map('map').setView([centerLat, centerLong], 18);
+                    L.tileLayer('Map/uiu/{z}/{x}/{y}.png', {
+                        maxZoom: 30,
+                    }).addTo(map);
+
+                    var customIcon = L.icon({
+                        iconUrl: './asset/pin-marker.gif',
+                        iconSize: [12, 22],
+                        iconAnchor: [3, 10],
+                        popupAnchor: [0, -5]
+                    });
+
+                    coordinatesArray.forEach(coord => {
+                        L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
+                            .bindPopup('Coordinates: ' + coord[0] + ', ' + coord[1]);
+                    });
+
+                    // Call the showDot function after setting up the map and markers
+                    // showDot(23.8001715, 90.4488124); // Example coordinates for San Francisco
+                    // showDot(23.79997740, 90.4493066);
+                })
+                .catch(error => {
+                    console.error('Error loading coordinates:', error);
+                });
+        }
+
+        function showDot(lat, long) {
+
+            gps_list.push([lat, long]);
+
+            if (!map) {
+                setTimeout(() => {
+                    showDot(lat, long);
+                }, 100);
+                return;
+            }
+
+            var polyline = L.polyline(gps_list, { color: 'blue' }).addTo(map);
+
+
+            // var customIcon = L.icon({
+            //     iconUrl: 'dot.png', // Assuming a dot marker image
+            //     iconSize: [1, 1],
+            //     iconAnchor: [5, 5]
+            // });
+
+            // L.marker([lat, long], { icon: customIcon }).addTo(map);
+        }
+
+        showCoordinates();
+
+        function showGreen(lat, long) {
+
+            gps_list.push([lat, long]);
+
+            if (!map) {
+                setTimeout(() => {
+                    showDot(lat, long);
+                }, 100);
+                return;
+            }
+
+            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
+
+
+            var customIcon = L.icon({
+                iconUrl: './asset/point_01.gif', // Assuming a dot marker image
+                iconSize: [11, 15],
+                iconAnchor: [5, 5]
+            });
+
+            L.marker([lat, long], { icon: customIcon }).addTo(map);
+        }
+
+        function showAruco(lat, long) {
+
+            gps_list.push([lat, long]);
+
+            if (!map) {
+                setTimeout(() => {
+                    showDot(lat, long);
+                }, 100);
+                return;
+            }
+
+            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
+
+
+            var customIcon = L.icon({
+                iconUrl: './asset/point_234.gif', // Assuming a dot marker image
+                iconSize: [15, 15],
+                iconAnchor: [5, 5]
+            });
+
+            L.marker([lat, long], { icon: customIcon }).addTo(map);
+        }
+
+        function showHammer(lat, long) {
+
+            gps_list.push([lat, long]);
+
+            if (!map) {
+                setTimeout(() => {
+                    showDot(lat, long);
+                }, 100);
+                return;
+            }
+
+            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
+
+
+            var customIcon = L.icon({
+                iconUrl: './asset/point_5.gif', // Assuming a dot marker image
+                iconSize: [25, 25],
+                iconAnchor: [5, 5]
+            });
+
+            L.marker([lat, long], { icon: customIcon }).addTo(map);
+        }
+
+        function showBottle(lat, long) {
+
+            gps_list.push([lat, long]);
+
+            if (!map) {
+                setTimeout(() => {
+                    showDot(lat, long);
+                }, 100);
+                return;
+            }
+
+            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
+
+
+            var customIcon = L.icon({
+                iconUrl: './asset/point_6.gif', // Assuming a dot marker image
+                iconSize: [25, 25],
+                iconAnchor: [5, 5]
+            });
+
+            L.marker([lat, long], { icon: customIcon }).addTo(map);
+        }
+
+
 
     </script>
 </body>
+
 </html>
