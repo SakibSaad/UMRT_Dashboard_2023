@@ -414,7 +414,7 @@
 
                     var customIcon = L.icon({
                         iconUrl: './asset/pin-marker.gif',
-                        iconSize: [12, 22],
+                        iconSize: [15, 28],
                         iconAnchor: [3, 10],
                         popupAnchor: [0, -5]
                     });
@@ -444,7 +444,11 @@
                 return;
             }
 
-            var polyline = L.polyline(gps_list, { color: 'blue' }).addTo(map);
+            // var polyline = L.polyline(gps_list, { color: 'blue' }).addTo(map);
+             // Define the weight (thickness) of the polyline
+            var polylineWeight = 2; // Change this value to set the desired thickness
+
+            var polyline = L.polyline(gps_list, { color: 'blue', weight: polylineWeight }).addTo(map);
 
 
             // var customIcon = L.icon({
