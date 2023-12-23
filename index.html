@@ -197,6 +197,7 @@
 
         var light = document.getElementById("light");
         var isBlinking = false;
+        var locationVariable;
 
 
         // Create a ROS connection
@@ -406,10 +407,23 @@
                 .then(coordinatesArray => {
                     var centerLat = coordinatesArray[0][0];
                     var centerLong = coordinatesArray[0][1];
+            
+                    var firstCoordinate = coordinatesArray[0];
+                    var firstCoordinateLongitude = firstCoordinate[1].toFixed(8); 
 
+                    if (firstCoordinateLongitude.startsWith('90.44')) {
+                        locationVariable = 'UIU';
+                    } else if (firstCoordinateLongitude.startsWith('-110.13')) {
+                        locationVariable = 'GreenRiver';
+                    } else {
+                        locationVariable = 'MDRS';
+                    }
+
+                    var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.png';
                     map = L.map('map').setView([centerLat, centerLong], 18);
-                    L.tileLayer('Map/uiu/{z}/{x}/{y}.png', {
-                        maxZoom: 30,
+
+                    L.tileLayer(tileUrl, {
+                        maxZoom: 19,
                     }).addTo(map);
 
                     var customIcon = L.icon({
@@ -424,9 +438,6 @@
                             .bindPopup('Coordinates: ' + coord[0] + ', ' + coord[1]);
                     });
 
-                    // Call the showDot function after setting up the map and markers
-                    // showDot(23.8001715, 90.4488124); // Example coordinates for San Francisco
-                    // showDot(23.79997740, 90.4493066);
                 })
                 .catch(error => {
                     console.error('Error loading coordinates:', error);
@@ -473,11 +484,8 @@
                 return;
             }
 
-            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
-
-
             var customIcon = L.icon({
-                iconUrl: './asset/point_01.gif', // Assuming a dot marker image
+                iconUrl: './asset/point_01.gif', // Only GPS
                 iconSize: [11, 15],
                 iconAnchor: [5, 5]
             });
@@ -496,11 +504,8 @@
                 return;
             }
 
-            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
-
-
             var customIcon = L.icon({
-                iconUrl: './asset/point_234.gif', // Assuming a dot marker image
+                iconUrl: './asset/point_234.gif', // ArUco
                 iconSize: [15, 15],
                 iconAnchor: [5, 5]
             });
@@ -519,11 +524,8 @@
                 return;
             }
 
-            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
-
-
             var customIcon = L.icon({
-                iconUrl: './asset/point_5.gif', // Assuming a dot marker image
+                iconUrl: './asset/point_5.gif', // OrangeRubberMallet
                 iconSize: [25, 25],
                 iconAnchor: [5, 5]
             });
@@ -542,11 +544,8 @@
                 return;
             }
 
-            // var polyline = L.polyline(gps_list, {color: 'blue'}).addTo(map);
-
-
             var customIcon = L.icon({
-                iconUrl: './asset/point_6.gif', // Assuming a dot marker image
+                iconUrl: './asset/point_6.gif', // Bottle
                 iconSize: [25, 25],
                 iconAnchor: [5, 5]
             });
