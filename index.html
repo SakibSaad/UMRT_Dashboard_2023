@@ -271,7 +271,7 @@
                 Div1.innerHTML = "Reached";
                 Div1.style.color = "green"; // make the text bold
 
-                showGreen(latitude,longitude);
+                showGreen(latitude, longitude);
 
                 if (isBlinking == false) {
                     startBlinking();
@@ -285,7 +285,7 @@
                 Div2.innerHTML = "Reached";
                 Div2.style.color = "green";
 
-                showGreen(latitude,longitude);
+                showGreen(latitude, longitude);
 
                 if (isBlinking == false) {
                     startBlinking();
@@ -407,10 +407,10 @@
                 .then(coordinatesArray => {
                     var centerLat = coordinatesArray[0][0];
                     var centerLong = coordinatesArray[0][1];
-            
+
                     // Dynamic Map loading based on coordinates from 'gps_data.json'
                     var firstCoordinate = coordinatesArray[0];
-                    var firstCoordinateLongitude = firstCoordinate[1].toFixed(8); 
+                    var firstCoordinateLongitude = firstCoordinate[1].toFixed(8);
 
                     if (firstCoordinateLongitude.startsWith('90.44')) {
                         locationVariable = 'UIU';
@@ -434,10 +434,16 @@
                         popupAnchor: [0, -5]
                     });
 
-                    coordinatesArray.forEach(coord => {
+                    // coordinatesArray.forEach(coord => {
+                    //     L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
+                    //         .bindPopup('Coordinates: ' + coord[0] + ', ' + coord[1]);
+                    // });
+                    for (let i = (coordinatesArray.length - 1); i >= 0; i--) {
+                        const coord = coordinatesArray[i];
                         L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
-                            .bindPopup('Coordinates: ' + coord[0] + ', ' + coord[1]);
-                    });
+                            .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
+                            .openPopup();
+                    }
 
                 })
                 .catch(error => {
@@ -457,7 +463,7 @@
             }
 
             // var polyline = L.polyline(gps_list, { color: 'blue' }).addTo(map);
-             // Define the weight (thickness) of the polyline
+            // Define the weight (thickness) of the polyline
             var polylineWeight = 2; // Change this value to set the desired thickness
 
             var polyline = L.polyline(gps_list, { color: 'blue', weight: polylineWeight }).addTo(map);
