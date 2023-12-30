@@ -42,7 +42,7 @@
 
             <div class="column-container">
                 <div class="one"></div>
-                <div class="two"></div>
+                <div class="two"><img id="image_sub"></div>
             </div>
             <!-- <div class="side-by-side-div" > -->
             <div id="map"></div>
@@ -223,6 +223,8 @@
             name: '/indicator', // indicator message
             messageType: 'std_msgs/String',
         });
+
+        var listener = new ROSLIB.Topic({ ros: ros, name: '/webcam_image/compressed', messageType: 'sensor_msgs/msg/CompressedImage' }); listener.subscribe(function (message) { console.log('Received message on ' + listener.name); document.getElementById('image_sub').src = "data:image/jpeg;base64," + message.data; });
 
         velListener.subscribe(function (message) {
             const linearvel = message.linear.x.toFixed(3);
