@@ -9,6 +9,7 @@ Format: <br>
     8.5 ms;7.9 ms <br>
     7.5 ms;down <br>
     down;down <br>
+    timeout;timeout (ping command timed out) <br>
 
 ## Install RosBridge:
 1. Install RosBridge server by running the following command:
