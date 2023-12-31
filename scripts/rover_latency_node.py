@@ -13,8 +13,8 @@ class RoverLatencyNode(Node):
 
     def ping_and_publish(self):
 
-        ip_address = "192.168.0.1" # jetson IP
-        ip_address_1 = "192.168.0.2" # RPi IP
+        ip_address = "192.168.1.120" # jetson IP
+        ip_address_1 = "192.168.1.10" # RPi IP
         try:
             
             result = subprocess.run(['ping', '-c', '1', ip_address], capture_output=True, text=True, timeout=5)
@@ -28,12 +28,12 @@ class RoverLatencyNode(Node):
                 time_match_1 = re.search(r'time=(\d+(\.\d+)?)\s*ms', ping_output_1)
 
                 if time_match:
-                    latency = time_match.group(1) + " ms"
+                    latency = time_match.group(1) 
                 else:
                     latency = "down"
 
                 if time_match_1:
-                    latency_1 = time_match_1.group(1) + " ms"
+                    latency_1 = time_match_1.group(1) 
                 else:
                     latency_1 = "down"
 
@@ -46,7 +46,7 @@ class RoverLatencyNode(Node):
 
 
         except subprocess.TimeoutExpired:
-            self.publisher_.publish(String(data='timeout;timeout'))
+            self.publisher_.publish(String(data='down;down'))
 
 def main(args=None):
     rclpy.init(args=args)

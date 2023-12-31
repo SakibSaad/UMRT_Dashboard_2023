@@ -14,6 +14,15 @@
     src: local('GALACTIC VANGUARDIAN NCV'), url('galactic-vanguardian-ncv.woff') format('woff');
 }
 
+/* Using a background image */
+body {
+    background-image: url('BG.jpeg'); /* Replace with your image path */
+    background-repeat: no-repeat; /* Specify if the image should repeat */
+    background-size: cover; /* Scale the image to cover the entire element */
+  }
+
+  
+
 .header{
     display: flex;
     /* border: 1px solid black; */
@@ -101,32 +110,32 @@ label {
     margin-left: 1420px;
     margin-right: 10px;
     height: 500px;
-    border-spacing: 10px;
+    border-spacing: 6px;
     margin-top: -732px;
     }
 
 
     th {
         width: 150px;
-        /* height: 10px; */
-        border: 3px solid #F5882E;
+        /* height: -10px; */
+        border: 1px solid #F5882E;
         text-align: center;
         color: #D95A27;
         /* padding: 2px; */
         font-family: 'JetBrains Mono', monospace;
-        font-size: 28px;
-        }
+        font-size: 21px;
+    }
         
-        td {
+    td {
         width: 200px;
-        /* height: 10px; */
-        border: 3px solid #F5882E;
+        /* height: -10px; */
+        border: 1px solid #F5882E;
         text-align: center;
         color: #F5882E;
         font-weight: bold;
         padding: 2px;
-        font-size: 28px;
-        }
+        font-size: 21px;
+    }
 
 .table-two{
     /* border: 1px solid red; */
@@ -138,10 +147,11 @@ label {
     /* border-collapse: collapse; */
     /* font-size: 15px; */
     font-family: 'JetBrains Mono', monospace;
-    margin-left: 1420px;
+    margin-left: 1422px;
     margin-right: 10px;
     margin-top: 10px;
     height: 300px;
+    border-spacing: 6px;
     /* border-spacing: 5px;   */
     /* border: 1px solid brown; */
 }
@@ -150,25 +160,25 @@ label {
 
 
 .t2-h{
-    width: 100px;
-    /* height: 10px; */
-    border: 3px solid black;
-    text-align: center;
-    color: black;
-    /* padding: 2px; */
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px; 
+    width: 150px;
+        /* height: 10px; */
+        border: 1px solid #F5882E;
+        text-align: center;
+        color: #D95A27;
+        /* padding: 2px; */
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 21px;
 }
 
 .t2-d{
-    width: 100px;
-    /* height: 10px; */
-    border: 3px solid black;
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    padding: 2px;
-    font-size: 15px;
+    width: 200px;
+        /* height: 10px; */
+        border: 1px solid #F5882E;
+        text-align: center;
+        color: #F5882E;
+        font-weight: bold;
+        padding: 2px;
+        font-size: 21px;
 }
 
 .status{
@@ -232,7 +242,7 @@ label {
 
 .autoHead{
     width: 200px;
-    border: 3px solid #F5882E;
+    border: 1px solid #F5882E;
     text-align: center;
     color: #D95A27;
     padding: 2px;
@@ -242,7 +252,7 @@ label {
 
 .autoRow{
     width: 200px;
-    border: 3px solid #F5882E;
+    border: 1px solid #F5882E;
     text-align: center;
     color: #F5882E;
     font-weight: bold;
