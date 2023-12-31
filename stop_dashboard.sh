@@ -24,3 +24,12 @@ then
   kill -9 $rosbridge_websocket_pid # -9 to kill the parent too | without this it dosen't work
   echo "killed rosbridge websocket"
 fi
+
+
+# kill rover_latency_node
+ping_pid=$(ps aux |grep "python3 rover_latency_node" |awk '{for(i=1;i<=NF;i++) if ($i ~ /^[0-9]+$/) print $i}' |head -n1)
+if [[ -n "$http_server_pid" ]]
+then
+  kill $ping_pid
+  echo "killed rover_latency_node"
+fi
