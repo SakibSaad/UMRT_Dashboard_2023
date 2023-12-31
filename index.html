@@ -582,9 +582,9 @@
             }
 
             var customIcon = L.icon({
-                iconUrl: './asset/point_01.gif', // Only GPS
-                iconSize: [11, 15],
-                iconAnchor: [5, 5]
+                iconUrl: './asset/point_01_.gif', // Only GPS
+                iconSize: [20, 23],
+                iconAnchor: [0, 0]
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
@@ -604,7 +604,7 @@
             var customIcon = L.icon({
                 iconUrl: './asset/point_234.gif', // ArUco
                 iconSize: [15, 15],
-                iconAnchor: [5, 5]
+                iconAnchor: [0, 0]
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
@@ -649,37 +649,6 @@
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
         }
-
-        //ping code
-
-
-        function sendRequestToIP(ipAddress) {
-            fetch(`http://${ipAddress}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    console.log('Response from', ipAddress, ':\n', data);
-                })
-                .catch(error => {
-                    console.error('There was a problem with the request:', error);
-                });
-        }
-
-        // Example usage:
-        const ipAddress = '127.0.0.1'; // Replace this with the desired IP address
-        sendRequestToIP(ipAddress);
-
-
-
-
-
-
-
-
     </script>
 
 
