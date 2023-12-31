@@ -224,7 +224,16 @@
             messageType: 'std_msgs/String',
         });
 
-        var listener = new ROSLIB.Topic({ ros: ros, name: '/webcam_image/compressed', messageType: 'sensor_msgs/msg/CompressedImage' }); listener.subscribe(function (message) { console.log('Received message on ' + listener.name); document.getElementById('image_sub').src = "data:image/jpeg;base64," + message.data; });
+        var listener = new ROSLIB.Topic({ 
+            ros: ros, 
+            name: '/webcam_image/compressed', 
+            messageType: 'sensor_msgs/msg/CompressedImage' 
+        }); 
+        
+        listener.subscribe(function (message) { 
+            console.log('Received message on ' + listener.name); 
+            document.getElementById('image_sub').src = "data:image/jpeg;base64," + message.data; 
+        });
 
         velListener.subscribe(function (message) {
             const linearvel = message.linear.x.toFixed(3);
@@ -422,18 +431,18 @@
                         locationVariable = 'MDRS';
                     }
 
-                    var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.png';
+                    var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.jpg'; // please modify the image format
                     map = L.map('map').setView([centerLat, centerLong], 18);
 
                     L.tileLayer(tileUrl, {
-                        maxZoom: 19,
+                        maxZoom: 20,
                     }).addTo(map);
 
                     var customIcon = L.icon({
                         iconUrl: './asset/pin-marker.gif',
-                        iconSize: [15, 28],
-                        iconAnchor: [3, 10],
-                        popupAnchor: [0, -5]
+                        iconSize: [17, 30],
+                        iconAnchor: [0, 0],
+                        popupAnchor: [0, 0]
                     });
 
                     // coordinatesArray.forEach(coord => {
@@ -468,7 +477,7 @@
             // Define the weight (thickness) of the polyline
             var polylineWeight = 2; // Change this value to set the desired thickness
 
-            var polyline = L.polyline(gps_list, { color: 'blue', weight: polylineWeight }).addTo(map);
+            var polyline = L.polyline(gps_list, { color: 'yellow', weight: polylineWeight }).addTo(map);
 
 
             // var customIcon = L.icon({
