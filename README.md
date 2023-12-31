@@ -1,5 +1,15 @@
 # Initial Dashboard
 
+##
+Topic: [/latency] <br>
+Type: Publisher <br>
+Message: String <br>
+Format: 
+    - <jetson_ping_result>;<RPi_ping_result>
+    - 8.5 ms;7.9 ms
+    - 7.5 ms;down
+    - down;down
+
 ## Install RosBridge:
 1. Install RosBridge server by running the following command:
     ```shell
