@@ -1,0 +1,107 @@
+[INFO] [launch]: All log files can be found below /home/saadlockholmes/.ros/log/2023-12-31-15-48-54-279466-saadsPC-5088
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [rosbridge_websocket-1]: process started with pid [5101]
+[INFO] [rosapi_node-2]: process started with pid [5103]
+[rosbridge_websocket-1] [INFO] [1704055735.414448013] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/roslib.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /leaflet/leaflet.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /leaflet/leaflet.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/UMRT%20new%20logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/BG.jpeg HTTP/1.1" 200 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/galactic-vanguardian-ncv.woff HTTP/1.1" 200 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /gps_data.json HTTP/1.1" 304 -
+[rosbridge_websocket-1] [INFO] [1704055735.639840088] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1704055735.641767541] [rosbridge_websocket]: Client connected. 1 clients total.
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196933/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196933/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /asset/pin-marker.gif HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196936/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196935/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196937/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196934/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196938/113220.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196938/113221.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196938/113219.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 15:48:55] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 15:48:55] "GET /Map/UIU/18/196938/113222.jpg HTTP/1.1" 404 -
+[rosbridge_websocket-1] [INFO] [1704055735.920728634] [rosbridge_websocket]: [Client f95f70e0-cb07-498d-9165-a8732f3a3c4c] Subscribed to /webcam_image/compressed
+[rosbridge_websocket-1] [INFO] [1704055736.007958664] [rosbridge_websocket]: [Client f95f70e0-cb07-498d-9165-a8732f3a3c4c] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1704055736.012770187] [rosbridge_websocket]: [Client f95f70e0-cb07-498d-9165-a8732f3a3c4c] Subscribed to /nav_sat
+[rosbridge_websocket-1] [INFO] [1704055736.016487037] [rosbridge_websocket]: [Client f95f70e0-cb07-498d-9165-a8732f3a3c4c] Subscribed to /latency
+[rosbridge_websocket-1] [INFO] [1704055736.020405321] [rosbridge_websocket]: [Client f95f70e0-cb07-498d-9165-a8732f3a3c4c] Subscribed to /indicator
+127.0.0.1 - - [31/Dec/2023 15:50:32] "GET /Map/UIU/18/196933/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:50:32] "GET /Map/UIU/18/196933/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:50:32] "GET /Map/UIU/18/196933/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 15:50:32] "GET /Map/UIU/18/196933/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET / HTTP/1.1" 200 -
+[rosbridge_websocket-1] [INFO] [1704056555.103151493] [rosbridge_websocket]: Client disconnected. 0 clients total.
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /asset/roslib.min.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /leaflet/leaflet.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /asset/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /leaflet/leaflet.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /asset/styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /asset/UMRT%20new%20logo.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /gps_data.json HTTP/1.1" 304 -
+[rosbridge_websocket-1] [INFO] [1704056555.163918425] [rosbridge_websocket]: Calling services in existing thread
+[rosbridge_websocket-1] [INFO] [1704056555.165867025] [rosbridge_websocket]: Client connected. 1 clients total.
+[rosbridge_websocket-1] [INFO] [1704056555.180345925] [rosbridge_websocket]: [Client 31cb6662-f298-4667-b53f-3ffad7832245] Subscribed to /webcam_image/compressed
+[rosbridge_websocket-1] [INFO] [1704056555.183198220] [rosbridge_websocket]: [Client 31cb6662-f298-4667-b53f-3ffad7832245] Subscribed to /cmd_vel
+[rosbridge_websocket-1] [INFO] [1704056555.187613212] [rosbridge_websocket]: [Client 31cb6662-f298-4667-b53f-3ffad7832245] Subscribed to /nav_sat
+[rosbridge_websocket-1] [INFO] [1704056555.190267342] [rosbridge_websocket]: [Client 31cb6662-f298-4667-b53f-3ffad7832245] Subscribed to /latency
+[rosbridge_websocket-1] [INFO] [1704056555.193850705] [rosbridge_websocket]: [Client 31cb6662-f298-4667-b53f-3ffad7832245] Subscribed to /indicator
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196935/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196935/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196934/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196936/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196934/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196936/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196935/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196935/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196934/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196936/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196934/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196936/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196933/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196937/113220.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196933/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196937/113221.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196933/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196937/113219.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196933/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196937/113222.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /asset/pin-marker.gif HTTP/1.1" 304 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196938/113220.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196938/113221.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196938/113219.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [31/Dec/2023 16:02:35] code 404, message File not found
+127.0.0.1 - - [31/Dec/2023 16:02:35] "GET /Map/UIU/18/196938/113222.jpg HTTP/1.1" 404 -
