@@ -521,7 +521,7 @@
                     var customIcon = L.icon({
                         iconUrl: './asset/pin-marker.gif',
                         iconSize: [17, 30],
-                        iconAnchor: [0, 0],
+                        iconAnchor: [10, 25],  // offset in map 
                         popupAnchor: [0, 0]
                     });
 
@@ -585,7 +585,7 @@
             var customIcon = L.icon({
                 iconUrl: './asset/point_01_.gif', // Only GPS
                 iconSize: [20, 23],
-                iconAnchor: [0, 0]
+                iconAnchor: [10, 25]  // offset in map 
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
@@ -605,7 +605,7 @@
             var customIcon = L.icon({
                 iconUrl: './asset/point_234.gif', // ArUco
                 iconSize: [15, 15],
-                iconAnchor: [0, 0]
+                iconAnchor: [10, 25]  // offset in map 
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
@@ -625,7 +625,7 @@
             var customIcon = L.icon({
                 iconUrl: './asset/point_5.gif', // OrangeRubberMallet
                 iconSize: [25, 25],
-                iconAnchor: [0, 0]
+                iconAnchor: [10, 25]  // offset in map 
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
@@ -645,7 +645,7 @@
             var customIcon = L.icon({
                 iconUrl: './asset/point_6.gif', // Bottle
                 iconSize: [25, 25],
-                iconAnchor: [0, 0]
+                iconAnchor: [10, 25]  // offset in map 
             });
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
