@@ -262,8 +262,8 @@
         velListener.subscribe(function (message) {
             const linearvel = message.linear.x.toFixed(3);
             const angularvel = message.angular.z.toFixed(3);
-            linveldiv.style.color = "black";
-            angularveldiv.style.color = "black";
+            linveldiv.style.color = "yellow";
+            angularveldiv.style.color = "yellow";
             linveldiv.innerHTML = linearvel + " m/s";
             angularveldiv.innerHTML = angularvel + " m/s";
         });
@@ -299,24 +299,24 @@
             }
             else {
                 let jetsonFloat = parseFloat(jetson);
-                
-                    if (jetsonFloat <= 50) {
-                        jetsonLatencydiv.style.color = "#00ff59";
-                    } else if (jetsonFloat > 50 && jetsonFloat < 400) {
-                        jetsonLatencydiv.style.color = "orange";
-                    } else {
-                        jetsonLatencydiv.style.color = "red";
-                    }
-                    jetsonLatencydiv.innerHTML = "Jetson: " + `${jetson}` + " ms";
+
+                if (jetsonFloat <= 50) {
+                    jetsonLatencydiv.style.color = "#00ff59";
+                } else if (jetsonFloat > 50 && jetsonFloat < 400) {
+                    jetsonLatencydiv.style.color = "orange";
+                } else {
+                    jetsonLatencydiv.style.color = "red";
+                }
+                jetsonLatencydiv.innerHTML = "Jetson: " + `${jetson}` + " ms";
 
             }
 
             if (RPI === "down") {
-                RPILatencydiv.innerHTML = "RPI: " + `${RPI}`;
+                RPILatencydiv.innerHTML = "RPi: " + `${RPI}`;
                 RPILatencydiv.style.color = "red";
             }
             else {
-                
+
                 let RPIFloat = parseFloat(RPI);
 
                 if (RPIFloat <= 50) {
@@ -514,6 +514,7 @@
                     map = L.map('map').setView([centerLat, centerLong], 18);
 
                     L.tileLayer(tileUrl, {
+                        minZoom: 16,
                         maxZoom: 20,
                     }).addTo(map);
 
