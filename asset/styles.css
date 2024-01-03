@@ -189,15 +189,6 @@ table{
 
 .t2-h{
     width: 150px;
-<<<<<<< HEAD
-    /* height: 10px; */
-    border: 1px solid #F5882E;
-    text-align: center;
-    color: #D95A27;
-    /* padding: 2px; */
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 19px;
-=======
         /* height: 10px; */
         border: 1px solid #F5882E;
         text-align: center;
@@ -205,21 +196,11 @@ table{
         /* padding: 2px; */
         font-family: 'JetBrains Mono', monospace;
         font-size: 19px;
->>>>>>> ba189d1606b77758a8cdbda0ae47bbe6b37a5f4a
 }
 
 
 .t2-d{
     width: 200px;
-<<<<<<< HEAD
-    /* height: 10px; */
-    border: 1px solid #F5882E;
-    text-align: center;
-    color: #F5882E;
-    font-weight: bold;
-    padding: 2px;
-    font-size: 19px;
-=======
         /* height: 10px; */
         border: 1px solid #F5882E;
         text-align: center;
@@ -227,7 +208,6 @@ table{
         font-weight: bold;
         padding: 2px;
         font-size: 19px;
->>>>>>> ba189d1606b77758a8cdbda0ae47bbe6b37a5f4a
 }
 
 .status{

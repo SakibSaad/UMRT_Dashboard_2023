@@ -584,18 +584,16 @@
                         maxZoom: 20,
                     }).addTo(map);
 
-                    var customIcon = L.icon({
-                        iconUrl: './asset/pin-marker.gif',
-                        iconSize: [17, 30],
-                        iconAnchor: [10, 25],  // offset in map 
-                        popupAnchor: [0, 0]
-                    });
 
-                    // coordinatesArray.forEach(coord => {
-                    //     L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
-                    //         .bindPopup('Coordinates: ' + coord[0] + ', ' + coord[1]);
-                    // });
                     for (let i = (coordinatesArray.length - 1); i >= 0; i--) {
+
+                        var customIcon = L.icon({
+                            iconUrl: './asset/pin-' + i + '.png',
+                            iconSize: [17, 30],
+                            iconAnchor: [10, 25],  // offset in map 
+                            popupAnchor: [0, 0]
+                        });
+                        
                         const coord = coordinatesArray[i];
                         L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
                             .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
