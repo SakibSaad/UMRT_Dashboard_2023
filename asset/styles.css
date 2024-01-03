@@ -14,6 +14,15 @@
     src: local('GALACTIC VANGUARDIAN NCV'), url('galactic-vanguardian-ncv.woff') format('woff');
 }
 
+/* Using a background image */
+body {
+    background-image: url('BG.jpeg'); /* Replace with your image path */
+    background-repeat: no-repeat; /* Specify if the image should repeat */
+    background-size: cover; /* Scale the image to cover the entire element */
+  }
+
+  
+
 .header{
     display: flex;
     /* border: 1px solid black; */
@@ -55,7 +64,7 @@ label {
 
 .container {
     width: 1400px;
-    height: 720px;
+    height: 790px;
     display: flex;
     margin-top: 10px; 
     /* border: 1px solid red; */
@@ -69,19 +78,45 @@ label {
 }
 
 .one {
+    
     display: flex;
-    width: 90%;
-    height: 49%;
+    width: 94%;
+    height: 30%;
     border: 3px solid #D95A27;
-    margin-left: 10px;
+    margin-left: 4px;
     margin-right: 10px;
     margin-bottom: 40px;
 }
 
+.t3-h{
+    border: none;
+    width: 150px;
+    /* height: 10px; */
+    text-align: center;
+    color: #D95A27;
+    /* padding: 2px; */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 19px;
+
+}
+
+.t3-d{
+    border: none;
+    width: 150px;
+    /* height: 10px; */
+    text-align: center;
+    color: #D95A27;
+    /* padding: 2px; */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 19px;
+    
+}
+
 .two{
+    margin-top: 50px;
     display: flex;
-    width: 90%;
-    height: 49%;
+    width: 320px;
+    height: 240px;
     border: 3px solid #D95A27;
     margin-left: 10px;
     margin-right: 10px;
@@ -101,32 +136,32 @@ label {
     margin-left: 1420px;
     margin-right: 10px;
     height: 500px;
-    border-spacing: 10px;
+    border-spacing: 6px;
     margin-top: -732px;
     }
 
 
     th {
         width: 150px;
-        /* height: 10px; */
-        border: 3px solid #F5882E;
+        /* height: -10px; */
+        border: 1px solid #F5882E;
         text-align: center;
         color: #D95A27;
         /* padding: 2px; */
         font-family: 'JetBrains Mono', monospace;
-        font-size: 28px;
-        }
+        font-size: 19px;
+    }
         
-        td {
+    td {
         width: 200px;
-        /* height: 10px; */
-        border: 3px solid #F5882E;
+        /* height: -10px; */
+        border: 1px solid #F5882E;
         text-align: center;
         color: #F5882E;
         font-weight: bold;
         padding: 2px;
-        font-size: 28px;
-        }
+        font-size: 19px;
+    }
 
 .table-two{
     /* border: 1px solid red; */
@@ -138,37 +173,41 @@ label {
     /* border-collapse: collapse; */
     /* font-size: 15px; */
     font-family: 'JetBrains Mono', monospace;
-    margin-left: 1420px;
+    margin-left: 1422px;
     margin-right: 10px;
     margin-top: 10px;
     height: 300px;
+    border-spacing: 6px;
     /* border-spacing: 5px;   */
     /* border: 1px solid brown; */
 }
 
-
-
+/* 
+table{
+    border: 3px solid black;
+} */
 
 .t2-h{
-    width: 100px;
+    width: 150px;
     /* height: 10px; */
-    border: 3px solid black;
+    border: 1px solid #F5882E;
     text-align: center;
-    color: black;
+    color: #D95A27;
     /* padding: 2px; */
     font-family: 'JetBrains Mono', monospace;
-    font-size: 15px; 
+    font-size: 19px;
 }
 
+
 .t2-d{
-    width: 100px;
+    width: 200px;
     /* height: 10px; */
-    border: 3px solid black;
+    border: 1px solid #F5882E;
     text-align: center;
-    color: black;
+    color: #F5882E;
     font-weight: bold;
     padding: 2px;
-    font-size: 15px;
+    font-size: 19px;
 }
 
 .status{
@@ -180,14 +219,17 @@ label {
 }
 
 .light {
-    width: 50px;
-    height: 80px; /* Set both width and height to the same value */
+    /* border: 1px solid red; */
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 190px;
+    width: 20px;
+    height: 40px; /* Set both width and height to the same value */
     transition: background-color 0.5s;
     /* margin: 0 auto; Center the element horizontally
     margin-top: 50px;
     margin-bottom: 100px; */
     /* background-color: red; */
-    margin-left: 5px;
 }
 
 /* .point-table{
@@ -232,7 +274,7 @@ label {
 
 .autoHead{
     width: 200px;
-    border: 3px solid #F5882E;
+    border: 1px solid #F5882E;
     text-align: center;
     color: #D95A27;
     padding: 2px;
@@ -242,7 +284,7 @@ label {
 
 .autoRow{
     width: 200px;
-    border: 3px solid #F5882E;
+    border: 1px solid #F5882E;
     text-align: center;
     color: #F5882E;
     font-weight: bold;
@@ -260,6 +302,3 @@ body {
     width: 100px;
     height: 100px;
 }
-
-
-
