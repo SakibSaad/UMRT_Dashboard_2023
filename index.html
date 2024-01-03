@@ -35,101 +35,19 @@
         </div>
 
 
-        <div class="main" >
+    <div class="main">
 
             <!-- <label><b>AUTONOMOUS DASHBOARD</b></label>  -->
 
 
             <div class="container">
 
-                <div class="column-container">
-                    <div class="one">
-                        <table>
-                            <tr>
-                                <th class="t3-h">RPi</th>
-                                <td class="t3-d">
-                                    <div id="RPILatency">N/A</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="t3-h">Jetson</th>
-                                <td class="t3-d">
-                                    <div id="jetsonLatency">N/A</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="t3-h">Linear</th>
-                                <td class="t3-d">
-                                    <div id="linear">N/A</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="t3-h">Angular</th>
-                                <td class="t3-d">
-                                    <div id="angular">N/A</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="t3-h">Mode</th>
-                                <td class="t3-d">
-                                    <div id="autonomous">N/A
-                                        
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="light" id="light"></div>
-                        
-                        <!-- <div style="flex-direction: column;">
-                            <div id="RPI">
-                                <label style="text-align: center;
-                                color: #D95A27;
-                                font-family: 'JetBrains Mono', monospace;
-                                font-size: 21px;">RPi:</label>
-                                <label id="RPILatency" style="text-align: center;
-                                color: #D95A27;
-                                font-family: 'JetBrains Mono', monospace;
-                                font-size: 21px;"></label>
-                            </div>
-
-                            <div id="jetson">
-                                <label style="text-align: center;
-                                color: #D95A27;
-                                font-family: 'JetBrains Mono', monospace;
-                                font-size: 21px;">Jetson:</label>
-                                <label" id="jetsonLatency" style="text-align: center;
-                                color: #D95A27;
-                                font-family: 'JetBrains Mono', monospace;
-                                font-size: 21px;"></label>
-                            </div>
-
-                            <div id="autonomous" style="text-align: center;
-                            color: #D95A27;
-                            font-family: 'JetBrains Mono', monospace;
-                            font-size: 21px;">N/A</div>
-                            
-                            <div class="light" id="light"></div>
-
-                            <div id="linear" style="text-align: center;
-                            color: #D95A27;
-                            font-family: 'JetBrains Mono', monospace;
-                            font-size: 21px;">N/A</div>
-
-                            <div id="angular" style="text-align: center;
-                            color: #D95A27;
-                            font-family: 'JetBrains Mono', monospace;
-                            font-size: 21px;">N/A</div>
-
-                            
-
-                        </div> -->
-                    </div>
-                    
-                    <div class="two"><img id="image_sub"></div>
-                </div>
-                <!-- <div class="side-by-side-div" > -->
-                <div id="map"></div>
+            <div class="column-container">
+                <div class="one"></div>
+                <div class="two"><img id="image_sub"></div>
+            </div>
+            <!-- <div class="side-by-side-div" > -->
+            <div id="map"></div>
 
             </div>
             <script src="./leaflet/leaflet.js"></script>
@@ -222,7 +140,7 @@
             </table>
         </div>
 
-        <!-- <div class="status">
+    <!-- <div class="status">
 
             <table class="autonomous">
                 <tr>
@@ -254,12 +172,9 @@
                 </tr>
             </table>
 
-        </div> -->
+    </div> -->
 
     </div>
-
-    </div>
-
 
 
     <script>
@@ -344,61 +259,6 @@
             showDot(latitude, longitude);
 
         });
-
-        const latencyListener = new ROSLIB.Topic({
-            ros: ros,
-            name: '/latency', // latency message
-            messageType: 'std_msgs/String',
-        });
-
-        latencyListener.subscribe(function (message) {
-            const text = message.data;
-
-            let msgArr = text.split(';');
-
-            let jetson = msgArr[0];
-            let RPI = msgArr[1];
-
-            if (jetson === "down") {
-                jetsonLatencydiv.innerHTML = `${jetson}`;
-                jetsonLatencydiv.style.color = "red";
-            }
-            else {
-                let jetsonFloat = parseFloat(jetson);
-
-                if (jetsonFloat <= 50) {
-                    jetsonLatencydiv.style.color = "#00ff59";
-                } else if (jetsonFloat > 50 && jetsonFloat < 400) {
-                    jetsonLatencydiv.style.color = "orange";
-                } else {
-                    jetsonLatencydiv.style.color = "red";
-                }
-                jetsonLatencydiv.innerHTML = `${jetson}` + " ms";
-
-            }
-
-            if (RPI === "down") {
-                RPILatencydiv.innerHTML =  `${RPI}`;
-                RPILatencydiv.style.color = "red";
-            }
-            else {
-
-                let RPIFloat = parseFloat(RPI);
-
-                if (RPIFloat <= 50) {
-                    RPILatencydiv.style.color = "#00ff59";
-                } else if (jetsonFloat > 50 && RPIFloat < 400) {
-                    RPILatencydiv.style.color = "orange";
-                } else {
-                    RPILatencydiv.style.color = "red";
-                }
-                RPILatencydiv.innerHTML = `${RPI}` + " ms";
-
-            }
-
-        });
-
-
 
 
 

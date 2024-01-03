@@ -1,5 +1,16 @@
 # Initial Dashboard
 
+##
+Topic: /latency <br>
+Type: Publisher <br>
+Message: String <br>
+Format: <br>
+    jetson_ping_result;RPi_ping_result <br>
+    8.5 ms;7.9 ms <br>
+    7.5 ms;down <br>
+    down;down <br>
+    timeout;timeout (ping command timed out) <br>
+
 ## Install RosBridge:
 1. Install RosBridge server by running the following command:
     ```shell
