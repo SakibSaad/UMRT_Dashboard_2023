@@ -14,7 +14,7 @@ class RoverLatencyNode(Node):
     def ping_and_publish(self):
 
         ip_address = "192.168.1.120" # jetson IP
-        ip_address_1 = "192.168.1.10" # RPi IP
+        ip_address_1 = "192.168.1.110" # RPi IP
         try:
             
             result = subprocess.run(['ping', '-c', '1', ip_address], capture_output=True, text=True, timeout=5)
