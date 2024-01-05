@@ -35,7 +35,7 @@
         </div>
 
 
-        <div class="main" >
+        <div class="main">
 
             <!-- <label><b>AUTONOMOUS DASHBOARD</b></label>  -->
 
@@ -73,14 +73,14 @@
                                 <th class="t3-h">Mode</th>
                                 <td class="t3-d">
                                     <div id="autonomous">N/A
-                                        
+
                                     </div>
-                                    
+
                                 </td>
                             </tr>
                         </table>
                         <div class="light" id="light"></div>
-                        
+
                         <!-- <div style="flex-direction: column;">
                             <div id="RPI">
                                 <label style="text-align: center;
@@ -125,7 +125,7 @@
 
                         </div> -->
                     </div>
-                    
+
                     <div class="two"><img id="image_sub"></div>
                 </div>
                 <!-- <div class="side-by-side-div" > -->
@@ -378,7 +378,7 @@
             }
 
             if (RPI === "down") {
-                RPILatencydiv.innerHTML =  `${RPI}`;
+                RPILatencydiv.innerHTML = `${RPI}`;
                 RPILatencydiv.style.color = "red";
             }
             else {
@@ -407,9 +407,17 @@
 
 
             const text = message.data;
-
-
+            let sentence = text.toLowerCase();
             console.log(message.data);
+
+            if ('speechSynthesis' in window) {
+                var utterance = new SpeechSynthesisUtterance(`${sentence}`);
+                utterance.rate = 0.7; 
+                utterance.volume = 0.5;
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('SpeechSynthesis is not supported in this browser');
+            }
 
             if (text === "RED -> Autonomous Mode") {
                 light.style.backgroundColor = "red";
@@ -442,6 +450,8 @@
                 Div2.style.color = "#00ff59";
 
                 showGreen(latitude, longitude);
+
+
 
                 if (isBlinking == false) {
                     startBlinking();
@@ -567,6 +577,8 @@
                     // Dynamic Map loading based on coordinates from 'gps_data.json'
                     var firstCoordinate = coordinatesArray[0];
                     var firstCoordinateLongitude = firstCoordinate[1].toFixed(8);
+                    var min_zoom = 15;
+                    var max_zoom = 20;
 
                     if (firstCoordinateLongitude.startsWith('90.44')) {
                         locationVariable = 'UIU';
@@ -574,14 +586,16 @@
                         locationVariable = 'GreenRiver';
                     } else {
                         locationVariable = 'MDRS';
+                        min_zoom = 14;
+                        max_zoom = 21;
                     }
 
                     var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.jpg'; // please modify the image format
                     map = L.map('map').setView([centerLat, centerLong], 18);
 
                     L.tileLayer(tileUrl, {
-                        minZoom: 14,
-                        maxZoom: 20,
+                        minZoom: min_zoom,
+                        maxZoom: max_zoom,
                     }).addTo(map);
 
 
@@ -593,11 +607,14 @@
                             iconAnchor: [10, 25],  // offset in map 
                             popupAnchor: [0, 0]
                         });
-                        
+
                         const coord = coordinatesArray[i];
                         L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
                             .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
                             .openPopup();
+
+                        var polylineWeight = 1;
+                        var polyline = L.polyline(coordinatesArray, { color: 'white', weight: polylineWeight }).addTo(map);
                     }
 
                 })
