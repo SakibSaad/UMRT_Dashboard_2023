@@ -581,7 +581,6 @@
                     } else {
                         locationVariable = 'MDRS';
                         min_zoom = 14;
-                        max_zoom = 21;
                     }
 
                     var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.jpg'; // please modify the image format
@@ -630,7 +629,7 @@
 
             // var polyline = L.polyline(gps_list, { color: 'blue' }).addTo(map);
             // Define the weight (thickness) of the polyline
-            var polylineWeight = 2; // Change this value to set the desired thickness
+            var polylineWeight = 1; // Change this value to set the desired thickness
 
             var polyline = L.polyline(gps_list, { color: 'yellow', weight: polylineWeight }).addTo(map);
 
