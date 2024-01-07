@@ -45,3 +45,8 @@ Format: <br>
 
 
 
+## install dependencies
+```bash
+# speak_node
+pip3 install pygame
+```
