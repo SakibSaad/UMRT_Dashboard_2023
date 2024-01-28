@@ -584,7 +584,7 @@
                     }
 
                     var tileUrl = 'Map/' + locationVariable + '/{z}/{x}/{y}.jpg'; // please modify the image format
-                    map = L.map('map').setView([centerLat, centerLong], 18);
+                    map = L.map('map', { attributionControl:false } ).setView([centerLat, centerLong], 18);
 
                     L.tileLayer(tileUrl, {
                         minZoom: min_zoom,
