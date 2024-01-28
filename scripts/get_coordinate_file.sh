@@ -3,7 +3,7 @@
 # Set variables
 set user "nvidia"
 set url "192.168.1.120"
-set remoteFile "$user@$url:/home/neo/.GPS_Coordinate_Loader_GUI/gps_data.json"
+set remoteFile "$user@$url:/home/nvidia/.GPS_Coordinate_Loader_GUI/gps_data.json"
 set localDestination "./"
 set password "jetsonmini"
 

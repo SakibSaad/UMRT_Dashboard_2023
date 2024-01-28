@@ -302,3 +302,11 @@ body {
     width: 100px;
     height: 100px;
 }
+
+
+.map-text-label {
+    font-size: 13px;
+    color: black;       
+    padding: 5px;
+    border-radius: 5px;
+}

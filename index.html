@@ -607,7 +607,15 @@
                             .openPopup();
 
                         var polylineWeight = 1;
+                        
                         var polyline = L.polyline(coordinatesArray, { color: 'white', weight: polylineWeight }).addTo(map);
+                        if (i > 0) {
+                            var distance = haversineDistance(coord, coordinatesArray[i - 1]);
+                            var text = distance.toFixed(2) + 'm';
+                            var middlePoint = [(coord[0] + coordinatesArray[i - 1][0]) / 2, (coord[1] + coordinatesArray[i - 1][1]) / 2];
+                            var textIcon = L.divIcon({ className: 'map-text-label', html: text });
+                            L.marker(middlePoint, { icon: textIcon }).addTo(map);
+                        }
                     }
 
                 })
@@ -615,6 +623,32 @@
                     console.error('Error loading coordinates:', error);
                 });
         }
+
+        function degToRad(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        function haversineDistance(coord1, coord2) {
+            const R = 6371000;
+            const lat1 = degToRad(coord1[0]);
+            const lon1 = degToRad(coord1[1]);
+            const lat2 = degToRad(coord2[0]);
+            const lon2 = degToRad(coord2[1]);
+
+            const dlat = lat2 - lat1;
+            const dlon = lon2 - lon1;
+
+            const a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+                    Math.cos(lat1) * Math.cos(lat2) *
+                    Math.sin(dlon / 2) * Math.sin(dlon / 2);
+
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+            const distance = R * c;
+
+            return distance;
+        }
+        
 
         function showDot(lat, long) {
 
