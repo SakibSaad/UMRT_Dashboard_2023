@@ -603,7 +603,7 @@
                             });
                             
                             L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
-                            .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
+                            .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1]);
                             
                         } else {
                             var customIcon = L.icon({
