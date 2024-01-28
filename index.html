@@ -593,21 +593,31 @@
 
 
                     for (let i = (coordinatesArray.length - 1); i >= 0; i--) {
-
-                        var customIcon = L.icon({
-                            iconUrl: './asset/pin-' + i + '.png',
-                            iconSize: [17, 30],
-                            iconAnchor: [10, 25],  // offset in map 
-                            popupAnchor: [0, 0]
-                        });
-
                         const coord = coordinatesArray[i];
-                        L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
+                        if (i==0) {
+                            var customIcon = L.icon({
+                                iconUrl: './asset/start-pin.png',
+                                iconSize: [17, 30],
+                                iconAnchor: [10, 25],  // offset in map 
+                                popupAnchor: [0, 0]
+                            });
+                            
+                            L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
+                            .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
+                            
+                        } else {
+                            var customIcon = L.icon({
+                                iconUrl: './asset/pin-' + i + '.png',
+                                iconSize: [17, 30],
+                                iconAnchor: [10, 25],  // offset in map 
+                                popupAnchor: [0, 0]
+                            });
+                            L.marker([coord[0], coord[1]], { icon: customIcon }).addTo(map)
                             .bindPopup(() => 'GNSS: ' + i + '<br>' + coord[0] + ', ' + coord[1])
                             .openPopup();
+                        }
 
                         var polylineWeight = 1;
-                        
                         var polyline = L.polyline(coordinatesArray, { color: 'white', weight: polylineWeight }).addTo(map);
                         if (i > 0) {
                             var distance = haversineDistance(coord, coordinatesArray[i - 1]);
