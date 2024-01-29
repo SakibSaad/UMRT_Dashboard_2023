@@ -23,7 +23,7 @@
     }
 </style>
 
-<body>
+<body onload="loadSavedData()">
 
     <div style=" margin-left: 50px;">
         <div class="header">
@@ -128,6 +128,22 @@
                     </div>
 
                     <div class="two"><img id="image_sub"></div>
+
+                    <div  style="display: flex;flex-direction: column; align-items: center; font-size: 30px;">
+                        <div style="color: #D95A27;">
+                            <input type="range" id="hoursSelector" class="time-selector" min="0" max="2" value="0">
+                            <span id="selectedHours">0</span> Hrs
+                        </div>
+                        
+                        <div style="color: #D95A27;">
+                            <input type="range" id="minutesSelector" class="time-selector" min="0" max="59" value="0">
+                            <span id="selectedMinutes">0</span> Min
+                        </div>
+                        
+                        <div id="timer" style="color: #D95A27;">00:00:00:000</div>
+                        <button id="startStopButton" onclick="startStopTimer()" style="font-size: 30px;">Start</button>
+                    </div>
+                    
                 </div>
                 <!-- <div class="side-by-side-div" > -->
                 <div id="map"></div>
@@ -277,6 +293,20 @@
         const Div6 = document.getElementById("six");
         const Div7 = document.getElementById("seven");
 
+        const Post1Lat= document.getElementById("Post1Lat");
+        const Post1Lon = document.getElementById("Post1Lon");
+        const Post2Lat= document.getElementById("Post2Lat");
+        const Post2Lon= document.getElementById("Post2Lon");
+        const Post3Lat = document.getElementById("Post3Lat");
+        const Post3Lon = document.getElementById("Post3Lon");
+
+        const Obj1Lat = document.getElementById("Obj1Lat");
+        const Obj1Lon = document.getElementById("Obj1Lon");
+
+        const Obj2Lat = document.getElementById("Obj2Lat");
+        const Obj2Lon = document.getElementById("Obj2Lon");
+        
+
         const linveldiv = document.getElementById("linear");
         const angularveldiv = document.getElementById("angular");
 
@@ -285,6 +315,10 @@
 
         let latitude = 0;
         let longitude = 0;
+
+        let timerInterval;
+        let remainingTime = 0;
+        let running = false;
 
 
 
@@ -426,8 +460,10 @@
                 stopBlinkingGreen();
             }
             else if (text === "Point Reached: 1") {
+                my_string = "Reached";
                 Div1.innerHTML = "Reached";
                 Div1.style.color = "#00ff59"; // make the text bold
+                saveData(Div1.id, my_string);
 
                 showGreen(latitude, longitude);
 
@@ -440,8 +476,10 @@
 
             }
             else if (text === "Point Reached: 2") {
+                my_string = "Reached";
                 Div2.innerHTML = "Reached";
                 Div2.style.color = "#00ff59";
+                saveData(Div2.id, my_string);
 
                 showGreen(latitude, longitude);
 
@@ -455,11 +493,16 @@
                 }
             }
             else if (text === "Point Reached: 3") {
+                my_string = "Reached";
                 Div3.innerHTML = "Reached";
                 Div3.style.color = "#00ff59";
+                saveData(Div3.id, my_string);
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post1Lat.innerHTML = `${latitude}`;
                 Post1Lon.innerHTML = `${longitude}`;
+
+                savePostLat(Post1Lat.id, `${latitude}`);
+                savePostLon(Post1Lon.id, `${longitude}`);
 
                 showAruco(latitude, longitude);
 
@@ -471,11 +514,16 @@
                 }
             }
             else if (text === "Point Reached: 4") {
+                my_string = "Reached";
                 Div4.innerHTML = "Reached";
                 Div4.style.color = "#00ff59";
+                saveData(Div4.id, my_string);
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post2Lat.innerHTML = `${latitude}`;
                 Post2Lon.innerHTML = `${longitude}`;
+
+                savePostLat(Post2Lat.id, `${latitude}`);
+                savePostLon(Post2Lon.id, `${longitude}`);
 
                 showAruco(latitude, longitude);
 
@@ -487,11 +535,16 @@
                 }
             }
             else if (text === "Point Reached: 5") {
+                my_string = "Reached";
                 Div5.innerHTML = "Reached";
                 Div5.style.color = "#00ff59";
+                saveData(Div5.id, my_string);
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Post3Lat.innerHTML = `${latitude}`;
                 Post3Lon.innerHTML = `${longitude}`;
+
+                savePostLat(Post3Lat.id, `${latitude}`);
+                savePostLon(Post3Lon.id, `${longitude}`);
 
                 showAruco(latitude, longitude);
 
@@ -503,11 +556,16 @@
                 }
             }
             else if (text === "Point Reached: 6") {
+                my_string = "Reached";
                 Div6.innerHTML = "Reached";
                 Div6.style.color = "#00ff59";
+                saveData(Div6.id, my_string);
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat datasave post coordinate by reading current /nav_sat data
                 Obj1Lat.innerHTML = `${latitude}`;
                 Obj1Lon.innerHTML = `${longitude}`;
+
+                saveObjLat(Obj1Lat.id, `${latitude}`);
+                saveObjLon(Obj1Lon.id, `${longitude}`);
 
                 showHammer(latitude, longitude);
 
@@ -519,11 +577,16 @@
                 }
             }
             else if (text === "Point Reached: 7") {
+                my_string = "Reached";
                 Div7.innerHTML = "Reached";
                 Div7.style.color = "#00ff59";
+                saveData(Div7.id, my_string);
                 // save post coordinate (required for autonomous course restart) by reading current /nav_sat data
                 Obj2Lat.innerHTML = `${latitude}`;
                 Obj2Lon.innerHTML = `${longitude}`;
+
+                saveObjLat(Obj2Lat.id, `${latitude}`);
+                saveObjLon(Obj2Lon.id, `${longitude}`);
 
                 showBottle(latitude, longitude);
 
@@ -534,6 +597,36 @@
                     console.log(isBlinking);
                 }
             }
+
+
+        function saveData(divName, my_string) {
+                console.log(divName);
+                sessionStorage.setItem(divName.toString(), my_string);
+        }
+
+        function savePostLat(divName, lat) {
+                console.log(divName);
+                sessionStorage.setItem(divName.toString(), lat);
+        }
+
+        function savePostLon(divName, lon) {
+                console.log(divName);
+                sessionStorage.setItem(divName.toString(), lon);
+        }
+
+        function saveObjLat(divName, lat) {
+                console.log(divName);
+                sessionStorage.setItem(divName.toString(), lat);
+        }
+
+        function saveObjLon(divName, lon) {
+                console.log(divName);
+                sessionStorage.setItem(divName.toString(), lon);
+        }
+
+
+
+        
 
             function startBlinking() {
                 isBlinking = true;
@@ -768,6 +861,186 @@
 
             L.marker([lat, long], { icon: customIcon }).addTo(map);
         }
+
+        function loadSavedData() {
+            
+            // console.log(sessionStorage);
+            // var saved2 = sessionStorage.getItem("savedReached2");
+            // var saved3 = sessionStorage.getItem("savedReached3");
+            // var saved4 = sessionStorage.getItem("savedReached4");
+            // var saved5 = sessionStorage.getItem("savedReached5");
+            // var saved6 = sessionStorage.getItem("savedReached6");
+            // var saved7 = sessionStorage.getItem("savedReached7");
+
+            
+            if (sessionStorage.getItem("one")) {
+                document.getElementById("one").textContent = sessionStorage.getItem("one");
+                document.getElementById("one").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("two")) {
+                document.getElementById("two").textContent = sessionStorage.getItem("two");
+                document.getElementById("two").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("three")) {
+                document.getElementById("three").textContent = sessionStorage.getItem("three");
+                document.getElementById("three").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("four")) {
+                document.getElementById("four").textContent = sessionStorage.getItem("four");
+                document.getElementById("four").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("five")) {
+                document.getElementById("five").textContent = sessionStorage.getItem("five");
+                document.getElementById("five").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("six")) {
+                document.getElementById("six").textContent = sessionStorage.getItem("six");
+                document.getElementById("six").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("seven")) {
+                document.getElementById("seven").textContent = sessionStorage.getItem("seven");
+                document.getElementById("seven").style.color = "#00ff59";
+            }
+
+            if (sessionStorage.getItem("Post1Lat")) {
+                document.getElementById("Post1Lat").textContent = sessionStorage.getItem("Post1Lat");
+            }
+
+            if (sessionStorage.getItem("Post1Lon")) {
+                document.getElementById("Post1Lon").textContent = sessionStorage.getItem("Post1Lon");
+            }
+
+            if (sessionStorage.getItem("Post2Lat")) {
+                document.getElementById("Post2Lat").textContent = sessionStorage.getItem("Post2Lat");
+            }
+
+            if (sessionStorage.getItem("Post2Lon")) {
+                document.getElementById("Post2Lon").textContent = sessionStorage.getItem("Post2Lon");
+            }
+
+            if (sessionStorage.getItem("Post3Lat")) {
+                document.getElementById("Post3Lat").textContent = sessionStorage.getItem("Post3Lat");
+            }
+
+            if (sessionStorage.getItem("Post3Lon")) {
+                document.getElementById("Post3Lon").textContent = sessionStorage.getItem("Post3Lon");
+            }
+
+            if (sessionStorage.getItem("Obj1Lat")) {
+                document.getElementById("Obj1Lat").textContent = sessionStorage.getItem("Obj1Lat");
+            }
+
+            if (sessionStorage.getItem("Obj1Lon")) {
+                document.getElementById("Obj1Lon").textContent = sessionStorage.getItem("Obj1Lon");
+            }
+
+            if (sessionStorage.getItem("Obj2Lat")) {
+                document.getElementById("Obj2Lat").textContent = sessionStorage.getItem("Obj2Lat");
+            }
+
+            if (sessionStorage.getItem("Obj2Lon")) {
+                document.getElementById("Obj2Lon").textContent = sessionStorage.getItem("Obj2Lon");
+            }
+
+            
+
+
+
+            // if (saved2) {
+            //     document.getElementById("two").textContent = saved2;
+            // }
+
+            // if (saved3) {
+            //     document.getElementById("three").textContent = saved3;
+            // }
+
+            // if (saved4) {
+            //     document.getElementById("four").textContent = saved4;
+            // }
+            
+            // if (saved5) {
+            //     document.getElementById("five").textContent = saved5;
+            // }
+            
+            // if (saved6) {
+            //     document.getElementById("six").textContent = saved6;
+            // }
+            
+            // if (saved7) {
+            //     document.getElementById("seven").textContent = saved7;
+            // }
+        }
+
+        function startStopTimer() {
+        const button = document.getElementById("startStopButton");
+
+        if (!running) {
+            button.textContent = "Stop";
+            remainingTime = calculateRemainingTime();
+            timerInterval = setInterval(updateTimer, 10);
+            running = true;
+        } else {
+            button.textContent = "Start";
+            clearInterval(timerInterval);
+            running = false;
+        }
+    }
+
+    function updateTimer() {
+        remainingTime -= 10;
+        if (remainingTime <= 0) {
+            clearInterval(timerInterval);
+            remainingTime = 0;
+            running = false;
+            document.getElementById("startStopButton").textContent = "Start";
+        }
+        const formattedTime = formatTime(remainingTime);
+        document.getElementById("timer").textContent = formattedTime;
+    }
+
+    function formatTime(milliseconds) {
+        let ms = milliseconds % 1000;
+        milliseconds = (milliseconds - ms) / 1000;
+        let secs = milliseconds % 60;
+        milliseconds = (milliseconds - secs) / 60;
+        let mins = milliseconds % 60;
+        let hrs = (milliseconds - mins) / 60;
+
+        return pad(hrs) + ':' + pad(mins) + ':' + pad(secs) + ':' + pad(ms, 3);
+    }
+
+
+function pad(number, size = 2) {
+        let result = String(number);
+        while (result.length < size) {
+            result = '0' + result;
+        }
+        return result;
+    }
+
+    function calculateRemainingTime() {
+        const hours = parseInt(document.getElementById("hoursSelector").value, 10);
+        const minutes = parseInt(document.getElementById("minutesSelector").value, 10);
+        return (hours * 60 + minutes) * 60 * 1000;
+    }
+
+    document.getElementById("hoursSelector").addEventListener("input", function() {
+        const selectedHours = parseInt(this.value, 10);
+        document.getElementById("selectedHours").textContent = pad(selectedHours);
+    });
+
+    document.getElementById("minutesSelector").addEventListener("input", function() {
+        const selectedMinutes = parseInt(this.value, 10);
+        document.getElementById("selectedMinutes").textContent = pad(selectedMinutes);
+    });
+
+
     </script>
 
 
