@@ -23,7 +23,7 @@
     }
 </style>
 
-<body onload="loadSavedData()">
+<body onload="loadSavedData()" style="background-color: #0B172B;">
 
     <div style=" margin-left: 50px;">
         <div class="header">
@@ -42,36 +42,38 @@
 
 
             <div class="container">
+                
 
                 <div class="column-container">
                     <div class="one">
+                       
                         <table>
                             <tr>
-                                <th class="t3-h">RPi</th>
+                                <th class="t3-h"><img style="height: 40px; width: 40px;" src="/asset/rover.png"></th>
                                 <td class="t3-d">
                                     <div id="RPILatency">N/A</div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="t3-h">Jetson</th>
+                                <th class="t3-h"><img style="height: 40px; width: 40px;" src="/asset/jetson.png"></th>
                                 <td class="t3-d">
                                     <div id="jetsonLatency">N/A</div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="t3-h">Linear</th>
+                                <th class="t3-h"><img style="height: 40px; width: 40px;" src="/asset/linear.png"></th>
                                 <td class="t3-d">
                                     <div id="linear">N/A</div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="t3-h">Angular</th>
+                                <th class="t3-h"><img style="height: 40px; width: 40px;" src="/asset/angular.png"></th>
                                 <td class="t3-d">
                                     <div id="angular">N/A</div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="t3-h">Mode</th>
+                                <th class="t3-h"><img style="height: 35px; width: 35px;" src="/asset/mode.png"></th>
                                 <td class="t3-d">
                                     <div id="autonomous">N/A
 
@@ -84,26 +86,29 @@
 
                     </div>
 
-                    <div class="two"><img id="image_sub"></div>
+                    <div class="two" style="border: inset 5px #D95A27;"><img id="image_sub"></div>
 
-                    <div style="display: flex;flex-direction: column; align-items: center; font-size: 30px;">
-                        <div style="color: #D95A27;">
+                    <div style="display: flex;flex-direction: column; align-items: center; font-size: 30px; margin-top: 30px; font-family: 'JetBrains Mono', monospace; font-size: larger;">
+                        <div style="color: #D95A27; font-family: 'JetBrains Mono', monospace;">
                             <input type="range" id="hoursSelector" class="time-selector" min="0" max="2" value="0">
-                            <span id="selectedHours">0</span> Hrs
+                            <span id="selectedHours" style="margin-left: 100px;">00</span> Hrs
                         </div>
 
-                        <div style="color: #D95A27;">
+                        <div style="color: #D95A27; font-family: 'JetBrains Mono', monospace;">
                             <input type="range" id="minutesSelector" class="time-selector" min="0" max="59" value="0">
-                            <span id="selectedMinutes">0</span> Min
+                            <span id="selectedMinutes" style="margin-left: 100px;">00</span> Min
                         </div>
 
-                        <div id="timer" style="color: #D95A27;">00:00:00:000</div>
-                        <button id="startStopButton" onclick="startStopTimer()" style="font-size: 30px;">Start</button>
+                        <div id="timer" style="color: #D95A27; font-family: 'JetBrains Mono', monospace; font-size: xx-large; margin-top: 5px;">00:00:00:000</div>
+                        <button id="startStopButton" onclick="startStopTimer()" style="font-size: 30px; margin-top: 5px; background-color: #0B172B; border: 2px solid #D95A27">
+                            <p id="buttonText" style=" margin: 0; color: #D95A27;">Start</p>
+                        </button>
+                        
                     </div>
 
                 </div>
                 <!-- <div class="side-by-side-div" > -->
-                <div id="map"></div>
+                <div id="map" style="border: inset 5px #D95A27;"></div>
 
             </div>
             <script src="./leaflet/leaflet.js"></script>
@@ -207,6 +212,9 @@
     <script>
 
         var gps_list = [];
+
+        const buttonText = document.getElementById("buttonText");
+
 
         const Div1 = document.getElementById("one");
         const Div2 = document.getElementById("two");
@@ -867,6 +875,7 @@
 
             if (!running) {
                 button.textContent = "Stop";
+                document.getElementById("startStopButton").style.color = "#D95A27";
                 remainingTime = calculateRemainingTime();
                 timerInterval = setInterval(updateTimer, 10);
                 running = true;
@@ -884,6 +893,10 @@
                 remainingTime = 0;
                 running = false;
                 document.getElementById("startStopButton").textContent = "Start";
+                document.getElementById("startStopButton").style.color = "#D95A27"; 
+                document.getElementById("buttonText").style.fontFamily = "'JetBrains Mono', monospace";
+
+
             }
             const formattedTime = formatTime(remainingTime);
             document.getElementById("timer").textContent = formattedTime;
@@ -925,7 +938,18 @@
             document.getElementById("selectedMinutes").textContent = pad(selectedMinutes);
         });
 
+        const sliderEl = document.querySelector("#range")
+const sliderValue = document.querySelector(".value")
 
+sliderEl.addEventListener("input", (event) => {
+  const tempSliderValue = event.target.value; 
+  
+  sliderValue.textContent = tempSliderValue;
+  
+  const progress = (tempSliderValue / sliderEl.max) * 100;
+ 
+  sliderEl.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
+})
     </script>
 
 

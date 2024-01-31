@@ -15,13 +15,118 @@
 }
 
 /* Using a background image */
-body {
-    background-image: url('BG.jpeg'); /* Replace with your image path */
-    background-repeat: no-repeat; /* Specify if the image should repeat */
-    background-size: cover; /* Scale the image to cover the entire element */
-  }
 
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    /*  overflow: hidden;  remove this line*/
+    
+    /* New additions */
+    height: 6px;
+    background: #D95A27;
+  }
   
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+  
+    /* box-shadow: -407px 0 0 400px #f50; emove this line */
+    transition: .2s ease-in-out;
+  }
+  
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+    
+    /* box-shadow: -407px 0 0 400px #f50; emove this line */
+    transition: .2s ease-in-out;
+  }
+  
+  /* Hover, active & focus Thumb: Webkit */
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(255,85,0, .1)
+  }
+  input[type="range"]:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+  }
+  input[type="range"]:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+  }
+  
+  /* Hover, active & focus Thumb: Firfox */
+  
+  input[type="range"]::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(255,85,0, .1)
+  }
+  input[type="range"]:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(255,85,0, .2)
+  }
+  input[type="range"]:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(255,85,0, .2)    
+  }
+  
+  /*=============
+  Aesthetics 
+  =========================*/
+  
+  body {
+    font-family: system-ui;
+  }
+  
+  h1 {
+    color: #4b4949; 
+    text-align: center;
+  }
+  
+  .wrapper {
+    color: #D95A27; 
+    background: #D95A27;
+    max-width: 400px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .range {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 4rem;
+    width: 80%;
+    background: #D95A27;
+    padding: 0px 10px;
+  }
+  
+  .value {
+    font-size: 26px;    
+    width: 50px;
+    text-align: center;
+  }
+   
 
 .header{
     display: flex;
@@ -56,8 +161,7 @@ label {
     /* display: flex; */
     /* justify-content: center; Center the content horizontally */
     /* align-items: center; Center the content vertically if needed */
-    
-    border: 1px solid #D95A27;
+    border: inset 5px #D95A27;
     height: 100px;
     width: 900px;
 }
@@ -78,11 +182,10 @@ label {
 }
 
 .one {
-    
     display: flex;
     width: 94%;
     height: 30%;
-    border: 3px solid #D95A27;
+    border: inset 5px #D95A27;
     margin-left: 4px;
     margin-right: 10px;
     margin-bottom: 40px;
@@ -113,7 +216,7 @@ label {
 }
 
 .two{
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     width: 320px;
     height: 240px;
