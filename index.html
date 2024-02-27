@@ -7,7 +7,7 @@
     <!-- using locally hosted roslib and fonts -->
     <!-- <link rel="stylesheet" type="text/css" href="http://localhost:8000/asset/styles.css"> -->
     <link rel="stylesheet" type="text/css" href="asset/styles.css">
-    <script type="text/javascript" src="http://localhost:8000/asset/roslib.min.js"></script>
+    <script type="text/javascript" src="asset/roslib.min.js"></script>
     <link rel="stylesheet" href="./leaflet/leaflet.css" />
 
 
@@ -259,9 +259,12 @@
         let blinkInterval;
 
 
+        const currentURL = window.location.href;
+        const ipAddress = currentURL.split('/')[2].split(':')[0];
+
         // Create a ROS connection
         const ros = new ROSLIB.Ros({
-            url: 'ws://localhost:9090',  // Adjust the URL to match your ROSBridge server address.
+            url: 'ws://' + ipAddress + ':9090',  // Adjust the URL to match your ROSBridge server address.
         });
 
         const velListener = new ROSLIB.Topic({
