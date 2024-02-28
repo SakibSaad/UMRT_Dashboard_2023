@@ -7,7 +7,7 @@ class IndicatorPublisherNode(Node):
         super().__init__('indicator_publisher')
         self.publisher = self.create_publisher(String, '/indicator', 10)
         self.get_logger().info("Indicator publisher node is ready.")
-        self.gnss = 4
+        self.gnss = 1
 
     def run(self):
         while rclpy.ok():
